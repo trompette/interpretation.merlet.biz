@@ -1,0 +1,120 @@
+{% extends '@en/layout.twig' %}
+
+{% block page_title %}
+    Free quote - {{ parent() }}
+{% endblock %}
+
+{#% block header_title %}{% endblock %#}
+
+{#% block header_lead %}{% endblock %#}
+
+{% block navbar %}
+    <ul class="nav">
+        <li class=""><a href="/en/home"><i class="icon-home"></i> Home</a></li>
+        <li class=""><a href="/en/service"><i class="icon-briefcase"></i> My services</a></li>
+        <li class=""><a href="/en/experience"><i class="icon-pencil"></i> Overall background</a></li>
+        <li class="active"><a href="/en/quote"><i class="icon-question-sign"></i> Free quote</a></li>
+    </ul>
+{% endblock %}
+
+{% block aside %}
+{% endblock %}
+
+{% block content %}
+    <h3>Get a quote for free</h3>
+
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label">Civility</label>
+            <div class="controls">
+                <label class="radio inline"><input type="radio" />Sir</label>
+                <label class="radio inline"><input type="radio" />Mrs</label>
+                <label class="radio inline"><input type="radio" />Miss</label>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">First name</label>
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Last name</label>
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Company name</label>
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Phone number</label>
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">E-mail address</label>
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Service required</label>
+            <div class="controls">
+                <select class="span6">
+                    <option>Simultaneous interpretation</option>
+                    <option>Whispered interpretation</option>
+                    <option>Consecutive interpretation</option>
+                    <option>Liaison interpretation</option>
+                    <option>Escort interpretation</option>
+                    <option>Technical translation</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Area of expertise</label>
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Languages to use</label>
+            <div class="controls">
+                <label class="checkbox inline"><input type="checkbox" />French</label>
+                <label class="checkbox inline"><input type="checkbox" />English</label>
+                <label class="checkbox inline"><input type="checkbox" />Russian</label>
+                <label class="checkbox inline"><input type="checkbox" />Ukrainian</label>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Details of the service</label>
+            <div class="controls">
+                <textarea class="span10" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="form-action">
+            <input class="btn btn-large btn-primary" type="submit" value="Get a quote" />
+        </div>
+    </form>
+
+    <h3>My details</h3>
+
+    <dl class="dl-horizontal">
+        <dt>Cell phone</dt>
+        <dd>+33.(0)6.59.82.82.17</dd>
+
+        <dt>Landline</dt>
+        <dd>+33.(0)9.52.36.87.32</dd>
+        
+        <dt>Fax</dt>
+        <dd>+33.(0)9.57.36.87.32</dd>
+        
+        <dt>E-mail address</dt>
+        <dd>interpretation@merlet.biz</dd>
+
+        <dt>Mailing address</dt>
+        <dd>
+            Svetlana Merlet Tonkonog <br/>
+            7 rue du Petit Pont <br/>
+            75005 Paris
+        </dd>
+
+        <dt>SIRET number</dt>
+        <dd>753-014-190 00015</dd>
+    </dl>
+{% endblock %}
+
+{#% block footer %}{% endblock %#}

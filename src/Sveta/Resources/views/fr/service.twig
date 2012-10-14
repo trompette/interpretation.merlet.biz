@@ -1,0 +1,48 @@
+{% extends '@fr/layout.twig' %}
+
+{% block page_title %}
+    Mes services - {{ parent() }}
+{% endblock %}
+
+{#% block header_title %}{% endblock %#}
+
+{#% block header_lead %}{% endblock %#}
+
+{% block navbar %}
+    <ul class="nav">
+        <li class=""><a href="/fr/home"><i class="icon-home"></i> Accueil</a></li>
+        <li class="active"><a href="/fr/service"><i class="icon-briefcase"></i> Mes services</a></li>
+        <li class=""><a href="/fr/experience"><i class="icon-pencil"></i> Mon parcours</a></li>
+        <li class=""><a href="/fr/quote"><i class="icon-question-sign"></i> Demande de devis</a></li>
+    </ul>
+{% endblock %}
+
+{#% block aside %}{% endblock %#}
+
+{% block content %}
+    <h3>Interprétation simultanée</h3>
+
+    <p>Ce mode d'interprétation nécessite l'utilisation d'un équipement spécial (cabine, casques individuels, microphone etc.). Grâce à ces équipements l'orateur n'est pas obligé de faire des pauses dans son discours. L'interprétation s'effectue en parallèle ce qui permet à l'auditoire de percevoir plus d'information sans perdre de temps. Ce type d'interprétation est d'habitude utilisé lors de conférences, de séminaires, de forums ou de présentations avec un grand nombre de participants.</p>
+
+    <h3>Chuchotage</h3>
+
+    <p>Variante de l'interprétation simultanée qui est chochotée à mi-voix à l'oreille de l'auditeur et qui ne prévoit le recours d'aucun support technique.</p>
+
+    <h3>Interprétation consécutive</h3>
+
+    <p>Contrairement à l'interprétaton simultanée, l'interprétation consécutive s'effectue avec des pauses et ne requiert pas d'équipement special. Cette interprétation est une interaction entre l'orateur et l'interprète. L'interprète prend des notes alors que l'orateur parle. Des pauses sémantiques à intervalles réguliers permettent à l'interprète de traduire ce qui vient d'être énoncé. Ce type d'interprétation convient pour des pourparlers, des réunions ou des tables rondes avec un petit nombre de participants.</p>
+
+    <h3>Interprétation de liaison</h3>
+
+    <p>Ce mode d'interprétation est utilisé lors d'un dialogue entre locuteurs parlant deux langues différentes. L'interprète traduit phrase après phrase sans prendre de notes en alternant entre les deux langues. Ce type d'interprétation est employé lors de rencontres en petit comité : discussion, négociations, entretiens ou visites de salons professionnels.</p>
+
+    <h3>Interprétation d'accompagnement</h3>
+
+    <p>L'interprétation d'accompagnement permet d'assister les individus lors de leurs déplacements professionnels ou personnels dans des villes ou des pays étrangers. L'interprète aide à résoudre les différentes difficultés inhérentes à un séjour à l'étranger. Ce type d'interprétation s'utilise lors des expositions, des foires, des événèments culturels, des visites d'entreprises.</p>
+
+    <h3>Traduction technique</h3>
+
+    <p>A l'opposé de l'inteprétation, la traduction s'effectue de manière écrite. Le but est de reproduire le texte d'un document non littéraire en le convertissant d'une langue de départ vers une langue d'arrivée. Il est nécessaire de tenir compte des particularités grammaticales, lexicales et stylistiques du document écrit lors de sa traduction. Ce service s'applique par exemple aux contrats, notices, manuels d'utilisation, sites internet.</p>
+{% endblock %}
+
+{#% block footer %}{% endblock %#}

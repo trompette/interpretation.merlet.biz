@@ -1,0 +1,48 @@
+{% extends '@en/layout.twig' %}
+
+{% block page_title %}
+    My services - {{ parent() }}
+{% endblock %}
+
+{#% block header_title %}{% endblock %#}
+
+{#% block header_lead %}{% endblock %#}
+
+{% block navbar %}
+    <ul class="nav">
+        <li class=""><a href="/en/home"><i class="icon-home"></i> Home</a></li>
+        <li class="active"><a href="/en/service"><i class="icon-briefcase"></i> My services</a></li>
+        <li class=""><a href="/en/experience"><i class="icon-pencil"></i> Overall background</a></li>
+        <li class=""><a href="/en/quote"><i class="icon-question-sign"></i> Free quote</a></li>
+    </ul>
+{% endblock %}
+
+{#% block aside %}{% endblock %#}
+
+{% block content %}
+    <h3>Simultaneous interpretation</h3>
+
+    <p>This mode of interpretation requires the use of special equipement (boothes, individual headsets,microphones etc.). Due to such equipement the speaker does not have to make pauses during his/her speech. The interpretation happens in parallel which allows the audience to perceive more infromation without loosing the time. This type of interpretation is usually used during conferences, seminars, forums or presentations with a large number of participants.</p>
+
+    <h3>Whispered interpretation</h3>
+
+    <p>A Variant of the simaltaneous interpretation which is whispered into the ear of the auditor (listener) and which does not require the use of any support equipement.</p>
+
+    <h3>Consecutive interpretation</h3>
+
+    <p>Unlike the simultaneous interpretation, the consecutive interpretaiton occurs with pauses and does not require the use of any special equipement. This interpretation is considered as an interaction between the speaker and the interpreter. The interpreter takes notes while the speaker holds his/her speech. The semantic pauses at a regular intervals allow the interpreter to tranlsate what has been said. This type of interpretation suits for negotiations, meetings or round tables with a few number of participants.</p>
+
+    <h3>Liaison interpretation</h3>
+
+    <p>This kind of interpretation is used in a form of a dialogue between speakers who speak two different languages. The interpreter translates phrase by phrase without taking notes by alternating two languages. This type of interpretation is used during small groups meeting : discussions, negotiations, interviews or professional exhibitions visits.</p>
+
+    <h3>Escort interpretation</h3>
+
+    <p>Escort interpretation allows to assist the individuals while being on their professional or personal stay in foreign cities or countries. The interpreter helps to resolve various difficulties inherent to a stay abroad. This type of interpretation is used during expositions, exhibitions, fairs, cultural events, business visites, etc.</p>
+
+    <h3>Technical translation</h3>
+
+    <p>Opposite to the interpretation, the translation  is performed in a written form. The aim is to reproduce the text of a non-literary document by converting it from an original language into a target language. While tralslating a written document it is necessary to mind its grammatical, lexical and stylistical peculiairities. For exemple, this kind of translation can be applied to translating contracts, notices, manuals, web sites.</p>
+{% endblock %}
+
+{#% block footer %}{% endblock %#}

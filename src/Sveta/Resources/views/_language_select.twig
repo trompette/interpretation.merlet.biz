@@ -1,0 +1,16 @@
+{% set route = app.request.attributes.get('_route') %}
+
+<select id="language-select">
+    <option value="{{ path(route, {'language': 'fr'}) }}" {% if language == 'fr' %}selected="selected"{% endif %}>
+    	Version française
+    </option>
+    <option value="{{ path(route, {'language': 'en'}) }}" {% if language == 'en' %}selected="selected"{% endif %}>
+    	English version
+    </option>
+    <option value="{{ path(route, {'language': 'ru'}) }}" {% if language == 'ru' %}selected="selected"{% endif %}>
+    	Русская версия
+    </option>
+    <option value="{{ path(route, {'language': 'ua'}) }}" {% if language == 'ua' %}selected="selected"{% endif %}>
+    	Українська версія
+    </option>
+</select>

@@ -1,0 +1,138 @@
+/*
+ * CSS based on a palette found on COLOURlovers
+ * http://www.colourlovers.com/palette/1024017/ReadyDone
+ *
+ * dark orange:  FF8F24
+ * light orange: FEAE37
+ * dark blue:    2F8DCA
+ * light blue:   51B4D4
+ * ivory white:  EFEFEF
+ * dark brown:   61473A
+ * dark black:   303030
+ */
+
+/* container size */
+#header-container,
+#content-container,
+#footer-container {
+	margin: 20px auto;
+	max-width: 950px;
+}
+
+/* header styles */
+#header-container {
+	border-bottom: none;
+}
+
+#header-container a {
+	color: #FEAE37;
+}
+
+#header-container p {
+	margin-left: 20px;
+	color: #51B4D4;
+}
+
+#header-container select {
+	border-color: #51B4D4;
+	border-width: 3px;
+	color: #2F8DCA;
+	font-weight: bold;
+	height: 33px;
+	line-height: 33px;
+	width: 100%;
+}
+
+/* content styles */
+#content-container {
+	background-color: #EFEFEF;
+	border: 2px solid #61473A;
+	border-radius: 10px;
+	padding: 2px;
+}
+
+#content-container-inner {
+	background-color: #EFEFEF;
+	border: 1px solid #61473A;
+	border-radius: 6px;
+	padding: 30px 50px;
+	text-align: justify;
+}
+
+#aside-container {
+	background-color: #2F8DCA;
+	border: 1px solid #51B4D4;
+	border-radius: 6px;
+	color: #EFEFEF;
+	display: inline-block;
+	float: right;
+	padding: 10px;
+	margin: 10px 0 20px 20px;
+	text-align: center;
+}
+
+#aside-container h4 {
+	background-color: #EFEFEF;
+	border: 1px solid #51B4D4;
+	border-radius: 3px;
+	color: #FF8F24;
+	margin: 0;
+	padding: 3px 20px;
+}
+
+#aside-container p {
+	margin: 10px 0 0 0;
+	font-weight: bold;
+}
+
+#content-container-inner h3 {
+	color: #2F8DCA;
+}
+
+#content-container-inner th {
+	text-align: center;
+}
+
+#content-container-inner label {
+	font-style: italic;
+}
+
+#content-container-inner select {
+	border-color: #61473A;
+}
+
+#content-container-inner .control-label {
+	margin-right: 20px;
+	width: 180px;
+}
+
+#content-container-inner .control-group {
+	margin-bottom: 10px;
+}
+
+#content-container-inner .form-action {
+	text-align: center;
+}
+
+#content-container-inner .btn-primary,
+#content-container-inner .btn-primary:hover {
+	color: #303030;
+}
+
+#content-container-inner dt {
+	font-weight: normal;
+	font-style: italic;
+	width: 180px;
+}
+
+#content-container-inner dd {
+	font-weight: bold;
+	margin-bottom: 10px;
+	margin-left: 200px;
+}
+
+/* footer styles */
+#footer-container {
+	color: #EFEFEF;
+	text-align: center;
+}

@@ -1,0 +1,146 @@
+{% extends '@ru/layout.twig' %}
+
+{% block page_title %}
+    Опыт и образование - {{ parent() }}
+{% endblock %}
+
+{#% block header_title %}{% endblock %#}
+
+{#% block header_lead %}{% endblock %#}
+
+{% block navbar %}
+    <ul class="nav">
+        <li class=""><a href="/ru/home"><i class="icon-home"></i> Главная</a></li>
+        <li class=""><a href="/ru/service"><i class="icon-briefcase"></i> Мои услуги</a></li>
+        <li class="active"><a href="/ru/experience"><i class="icon-pencil"></i> Опыт и образование</a></li>
+        <li class=""><a href="/ru/quote"><i class="icon-question-sign"></i> Бесплатный расчёт стоимости</a></li>
+    </ul>
+{% endblock %}
+
+{#% block aside %}{% endblock %#}
+
+{% block content %}
+    <h3>Мой опыт</h3>
+
+    <p>На протяжении моей профессиональной деятельности в предоставлении услуг устного и письменного перевода, мне удалось завоевать доверие и признание множества организаций и частных лиц как на территории Франции, так и за её пределами.</p>
+
+    <p>Вот некоторые из них:</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Период</th>
+                <th>Клиент</th>
+                <th>Страна</th>
+                <th>Проект</th>
+                <th>Языки</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>сентябрь 2012&nbsp;г.</td>
+                <td><a href="http://www.topmodel-muz.tv/">Топ-Модель По-Русски</a></td>
+                <td>Франция</td>
+                <td>синхронный перевод для жюри реалити шоу</td>
+                <td>английский, французский, русский</td>
+            </tr>
+            <tr>
+                <td>июль 2012&nbsp;г.</td>
+                <td><a href="http://www.mtu.gov.ua/">Министерство инфраструктуры Украины</a></td>
+                <td>Франция</td>
+                <td>сопроводительный перевод для группы украинцев во время их переговоров с французскими коллегами</td>
+                <td>украинский, русский, французский</td>
+            </tr>
+            <tr>
+                <td>июль 2012&nbsp;г.</td>
+                <td><a href="http://www.systra.com/">SYSTRA</a></td>
+                <td>Франция</td>
+                <td>шушотаж во время презентации программного обеспечения для украинских коллег компании SYSTRA</td>
+                <td>французский, украинский, русский</td>
+            </tr>
+            <tr>
+                <td>июль 2012&nbsp;г.</td>
+                <td><a href="http://www.arttrading.info/eng">Art Trading Group</a></td>
+                <td>Франция</td>
+                <td>пофразовый перевод во время проведения переговоров</td>
+                <td>английский, русский</td>
+            </tr>
+            <tr>
+                <td>май 2012&nbsp;г.</td>
+                <td><a href="http://www.alterway.fr/">Alter Way</a></td>
+                <td>Франция</td>
+                <td>письменный технический перевод веб-сайта <a href="http://www.wampserver.com/">Wamp Server</a></td>
+                <td>французский, русский</td>
+            </tr>
+            <tr>
+                <td>май 2012&nbsp;г.</td>
+                <td>Частное лицо</td>
+                <td>Франция</td>
+                <td>пофразовый перевод во время брачной церемонии в <a href="http://www.mairie2.paris.fr/">мэрии Парижа (2-ой округ)</a></td>
+                <td>французский, русский</td>
+            </tr>
+            <tr>
+                <td>март 2012&nbsp;г.</td>
+                <td>Мега-Ростторг</td>
+                <td>Франция</td>
+                <td>сопроводительный перевод для русского клиента в рамках проведения выставки <a href="http://www.europain.com/">EuroPain</a></td>
+                <td>русский, французский</td>
+            </tr>
+            <tr>
+                <td>сентябрь 2011&nbsp;г., февраль 2012&nbsp;г.</td>
+                <td><a href="http://novaline.by">Nova Line</a></td>
+                <td>Франция</td>
+                <td>сопроводительный перевод для белорусского клиента в  рамках проведения выставок <a href="http://www.texworld.messefrankfurt.com/paris/en/visitors/abouttexworld.html">TexWorld</a> и <a href="http://www.premierevision.com/">Première Vision</a></td>
+                <td>русский, французский, английский</td>
+            </tr>
+            <tr>
+                <td>июнь 2011&nbsp;г.</td>
+                <td><a href="http://www.asiatis.com">ASIATIS</a></td>
+                <td>Франция</td>
+                <td>письменный технический перевод документации в сфере прессы</td>
+                <td>французский, украинский</td>
+            </tr>
+            <tr>
+                <td>июнь 2011&nbsp;г.</td>
+                <td>Брачное агентство</td>
+                <td>Украина</td>
+                <td>пофразовый перевод для клиента агентства, прибывшего из Швейцарии</td>
+                <td>французский, русский, украинский</td>
+            </tr>
+            <tr>
+                <td>июнь 2011&nbsp;г.</td>
+                <td>Частное лицо</td>
+                <td>Черногория</td>
+                <td>сопроводительный перевод для туристов во время экскурсий</td>
+                <td>французский, русский</td>
+            </tr>
+            <tr>
+                <td>май 2008&nbsp;г.-июль 2011&nbsp;г.</td>
+                <td><a href="http://www.wwctrials.com/">Worldwide Clinical Trials</a></td>
+                <td>Украина</td>
+                <td>технический письменный перевод медицинской, фармацевтической и административной документации</td>
+                <td>украинский, русский, английский</td>
+            </tr>
+            <tr>
+                <td>сентябрь-апрель 2007&nbsp;г.</td>
+                <td>дилер бренда <a href="http://www.professionalbyfama.com/">Professional By Fama</a></td>
+                <td>Украина</td>
+                <td>технический письменный и пофразовый устный переводы в области красоты и моды</td>
+                <td>украниский, русский, английский</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Моё образование</h3>
+
+    <p>Мир перевода всегда представлял для меня большой интерес, поэтому я решила получить высшее образование именно в этой области.</p>
+
+    <p>Мои дипломы:</p>
+
+    <ul>
+        <li>2007 год - <a href="http://www.univer.kharkov.ua/en">Харьковский национальный университет им. В.Н. Каразина</a>, <a href="http://www-foreign.univer.kharkov.ua/eng/index.html">факультет иностранных языков</a>, кафедра английской филологии. «Магистр» - Филолог, преподаватель английского и французского языков и литературы; переводчик английского и французского языков.</li>
+        <li>2006 год  - <a href="http://www.univer.kharkov.ua/en">Харьковский национальный университет им. В.Н. Каразина</a>, <a href="http://www-foreign.univer.kharkov.ua/eng/index.html">факультет иностранных языков</a>, кафедра английской филологии. «Бакалавр» Филолог, преподаватель английского языка и литературы.</li>
+    </ul>
+{% endblock %}
+
+{#% block footer %}{% endblock %#}

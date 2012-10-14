@@ -1,0 +1,43 @@
+{% extends '@fr/layout.twig' %}
+
+{% block page_title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{#% block header_title %}{% endblock %#}
+
+{#% block header_lead %}{% endblock %#}
+
+{% block navbar %}
+    <ul class="nav">
+        <li class="active"><a href="/fr/home"><i class="icon-home"></i> Accueil</a></li>
+        <li class=""><a href="/fr/service"><i class="icon-briefcase"></i> Mes services</a></li>
+        <li class=""><a href="/fr/experience"><i class="icon-pencil"></i> Mon parcours</a></li>
+        <li class=""><a href="/fr/quote"><i class="icon-question-sign"></i> Demande de devis</a></li>
+    </ul>
+{% endblock %}
+
+{#% block aside %}{% endblock %#}
+
+{% block content %}
+    <h3>Bienvenue !</h3>
+
+    <p>Je m'appelle Svetlana Merlet (née Tonkonog), je suis originaire d'Ukraine et je vis actuellement à Paris. Je propose des <a href="/fr/service">services d'interpétation et de traduction</a> adaptés à vos attentes.</p>
+
+    <p>Mon expérience et mon professionnalisme me permettent de fournir un travail de qualité en répondant au mieux aux exigences de chacun de <a href="/fr/experience">mes clients</a>.</p>
+
+    <p>Je maîtrise quatre langues :</p>
+
+    <ul>
+        <li>Ukrainien, langue maternelle (langue A) ;</li>
+        <li>Russe, Langue maternelle (langue A) ;</li>
+        <li>Français, Etudiée à l'école pendant 5 ans (niveau Master), Pratiquée couramment depuis 2007 (langue B) ;</li>
+        <li>Anglais, Etudiée à l'école pendant 5 ans (niveau Master), Utilisée professionnellement depuis 2005 (langue B).</li>
+    </ul>
+
+    <p>Mon activité professionnelle m'a permis d'acquérir de l'expérience dans les domaines suivants : médecine, pharmacie, textile, télécommunications, internet, informatique, design, mode, luxe, transport, banques, finance, assurances, sciences, alimentation.</p>
+
+    <p>N'hésitez pas à <a href="/fr/quote">me contacter</a> en cas de besoin.</p>
+{% endblock %}
+
+{#% block footer %}{% endblock %#}

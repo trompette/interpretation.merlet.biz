@@ -1,0 +1,112 @@
+{% extends '@ua/layout.twig' %}
+
+{% block page_title %}
+    Розрахунок вартості замовлення - {{ parent() }}
+{% endblock %}
+
+{#% block header_title %}{% endblock %#}
+
+{#% block header_lead %}{% endblock %#}
+
+{% block navbar %}
+    <ul class="nav">
+        <li class=""><a href="/ua/home"><i class="icon-home"></i> Про мене</a></li>
+        <li class=""><a href="/ua/service"><i class="icon-briefcase"></i> Мої послуги</a></li>
+        <li class=""><a href="/ua/experience"><i class="icon-pencil"></i> Досвід та освіта</a></li>
+        <li class="active"><a href="/ua/quote"><i class="icon-question-sign"></i> Розрахунок вартості замовлення</a></li>
+    </ul>
+{% endblock %}
+
+{% block aside %}
+{% endblock %}
+
+{% block content %}
+    <h3>Отримати безкоштовний розрахунок вартості замовлення</h3>
+
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label">Ім'я</label><!-- prénom -->
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Прізвище</label><!-- nom -->
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Назва компанії</label>
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Телефон</label>
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Адреса е-mail</label>
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Необхідна послуга</label>
+            <div class="controls">
+                <select class="span6">
+                    <option>синхронний переклад</option>
+                    <option>шушотаж</option>
+                    <option>послідовний переклад</option>
+                    <option>пофразовий переклад</option>
+                    <option>супровідний переклад</option>
+                    <option>письмовий технічний переклад</option>
+                    <option>інше</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Тематика перекладу</label>
+            <div class="controls"><input class="span6" type="text" /></div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Мови перекладу</label>
+            <div class="controls">
+                <label class="checkbox inline"><input type="checkbox" />французька</label>
+                <label class="checkbox inline"><input type="checkbox" />англійська</label>
+                <label class="checkbox inline"><input type="checkbox" />російська</label>
+                <label class="checkbox inline"><input type="checkbox" />українська</label>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Деталі замовлення</label>
+            <div class="controls">
+                <textarea class="span10" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="form-action">
+            <input class="btn btn-large btn-primary" type="submit" value="Відправити замовлення" />
+        </div>
+    </form>
+
+    <h3>Мої контактні дані</h3>
+
+    <dl class="dl-horizontal">
+        <dt>Мобільний телефон</dt>
+        <dd>+33.(0)6.59.82.82.17</dd>
+
+        <dt>Стаціонарний телефон</dt>
+        <dd>+33.(0)9.52.36.87.32</dd>
+        
+        <dt>Факс</dt>
+        <dd>+33.(0)9.57.36.87.32</dd>
+        
+        <dt>Адреса е-mail</dt>
+        <dd>interpretation@merlet.biz</dd>
+
+        <dt>Поштова адреса</dt>
+        <dd>
+            Svetlana Merlet Tonkonog <br/>
+            7 rue du Petit Pont <br/>
+            75005 Paris
+        </dd>
+
+        <dt>Номер SIRET</dt>
+        <dd>753-014-190 00015</dd>
+    </dl>
+{% endblock %}
+
+{#% block footer %}{% endblock %#}
