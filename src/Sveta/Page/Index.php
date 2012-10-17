@@ -11,10 +11,12 @@ class Index extends ApplicationAware
     {
         $this->application['monolog']->addInfo('Executing Index()');
 
-        $language = $request->getPreferredLanguage($this->application['available_languages']);
+        $available_tags = array_keys($this->application['available_languages']);
+        $preferred_tag = $request->getPreferredLanguage($available_tags);
+        $preferred_language = $this->application['available_languages'][$preferred_tag];
 
-        return $this->application->redirect(
-            $this->application['url_generator']->generate('home', array('language' => $language))
-        );
+        $home_url = $this->application['url_generator']->generate('home', array('language' => $preferred_language));
+
+        return $this->application->redirect($home_url);
     }
 }

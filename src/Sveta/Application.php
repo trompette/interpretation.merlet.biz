@@ -18,7 +18,12 @@ class Application extends SilexApplication
 
         // parameters definition
         $this['debug'] = $debug;
-        $this['available_languages'] = array('fr', 'en', 'ru', 'ua');
+        $this['available_languages'] = array(
+            'fr' => 'french',
+            'en' => 'english',
+            'ru' => 'russian',
+            'uk' => 'ukrainian',
+        );
         $this['language_regexp'] = implode('|', $this['available_languages']);
 
         // registering service providers 
