@@ -12,8 +12,6 @@ class Quote extends ApplicationAware
 
         $template = sprintf('@%s/quote.twig', $language);
 
-        return $this['twig']->render($template, array(
-            'language' => $language,
-        ));
+        return $this['twig']->render($template, array('language' => $language));
     }
 }

@@ -12,8 +12,6 @@ class Home extends ApplicationAware
 
         $template = sprintf('@%s/home.twig', $language);
 
-        return $this['twig']->render($template, array(
-            'language' => $language,
-        ));
+        return $this['twig']->render($template, array('language' => $language));
     }
 }
