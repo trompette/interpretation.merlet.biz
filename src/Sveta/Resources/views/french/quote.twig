@@ -23,72 +23,78 @@
 {% block content %}
     <h3>Demande de devis gratuit</h3>
 
-    <form class="form-horizontal">
+    {% if app.request.get('step') == 'form' %}
+    <form class="form-horizontal" method="post">
         <div class="control-group">
             <label class="control-label">Civilité</label>
             <div class="controls">
-                <label class="radio inline"><input type="radio" />Monsieur</label>
-                <label class="radio inline"><input type="radio" />Madame</label>
-                <label class="radio inline"><input type="radio" />Mademoiselle</label>
+                <label class="radio inline"><input name="form[civility]" type="radio" value="Monsieur" />Monsieur</label>
+                <label class="radio inline"><input name="form[civility]" type="radio" value="Madame" />Madame</label>
+                <label class="radio inline"><input name="form[civility]" type="radio" value="Mademoiselle" />Mademoiselle</label>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label">Nom</label>
-            <div class="controls"><input class="span6" type="text" /></div>
+            <div class="controls"><input class="span6" name="form[firstName]" type="text" /></div>
         </div>
         <div class="control-group">
             <label class="control-label">Prénom</label>
-            <div class="controls"><input class="span6" type="text" /></div>
+            <div class="controls"><input class="span6" name="form[lastName]" type="text" /></div>
         </div>
         <div class="control-group">
             <label class="control-label">Société</label>
-            <div class="controls"><input class="span6" type="text" /></div>
+            <div class="controls"><input class="span6" name="form[company]" type="text" /></div>
         </div>
         <div class="control-group">
             <label class="control-label">Téléphone</label>
-            <div class="controls"><input class="span6" type="text" /></div>
+            <div class="controls"><input class="span6" name="form[phone]" type="text" /></div>
         </div>
         <div class="control-group">
             <label class="control-label">Adresse électronique</label>
-            <div class="controls"><input class="span6" type="text" /></div>
+            <div class="controls"><input class="span6" name="form[email]" type="text" /></div>
         </div>
         <div class="control-group">
             <label class="control-label">Nature du service</label>
             <div class="controls">
-                <select class="span6">
-                    <option>Interprétation simultanée</option>
-                    <option>Chuchotage</option>
-                    <option>Interprétation consécutive</option>
-                    <option>Interprétation de liaison</option>
-                    <option>Interprétation d'accompagnement</option>
-                    <option>Traduction technique</option>
-                    <option>Autre</option>
+                <select class="span6" name="form[service]">
+                    <option value="Interprétation simultanée">Interprétation simultanée</option>
+                    <option value="Chuchotage">Chuchotage</option>
+                    <option value="Interprétation consécutive">Interprétation consécutive</option>
+                    <option value="Interprétation de liaison">Interprétation de liaison</option>
+                    <option value="Interprétation d'accompagnement">Interprétation d'accompagnement</option>
+                    <option value="Traduction technique">Traduction technique</option>
+                    <option value="Autre">Autre</option>
                 </select>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label">Domaine</label>
-            <div class="controls"><input class="span6" type="text" /></div>
+            <div class="controls"><input class="span6" name="form[area]" type="text" /></div>
         </div>
         <div class="control-group">
             <label class="control-label">Langues à utiliser</label>
             <div class="controls">
-                <label class="checkbox inline"><input type="checkbox" />Français</label>
-                <label class="checkbox inline"><input type="checkbox" />Anglais</label>
-                <label class="checkbox inline"><input type="checkbox" />Russe</label>
-                <label class="checkbox inline"><input type="checkbox" />Ukrainien</label>
+                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="Français" />Français</label>
+                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="Anglais" />Anglais</label>
+                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="Russe" />Russe</label>
+                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="Ukrainien" />Ukrainien</label>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label">Détails de votre demande</label>
             <div class="controls">
-                <textarea class="span10" rows="10"></textarea>
+                <textarea class="span10" name="form[details]" rows="10"></textarea>
             </div>
         </div>
         <div class="form-action">
             <input class="btn btn-large btn-primary" type="submit" value="Demander un devis" />
         </div>
     </form>
+    {% else %}
+        <p>Merci d'avoir pris le temps de compléter le formulaire.</p>
+
+        <p>Je vais étudier votre demande et je vous contacte le plus vite possible.</p>
+    {% endif %}
 
     <h3>Mes coordonnées détaillées</h3>
 

@@ -6,6 +6,7 @@ use Monolog\Logger;
 use Silex\Application as SilexApplication;
 use Silex\Provider\FormServiceProvider;
 use Silex\Provider\MonologServiceProvider;
+use Silex\Provider\SwiftmailerServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 
@@ -21,6 +22,7 @@ class Application extends SilexApplication
         // registering service providers
         $this->register(new FormServiceProvider);
         $this->register(new MonologServiceProvider);
+        $this->register(new SwiftmailerServiceProvider);
         $this->register(new TwigServiceProvider);
         $this->register(new UrlGeneratorServiceProvider);
 

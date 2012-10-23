@@ -31,8 +31,10 @@ class ControllerProvider implements ControllerProviderInterface
             ->bind('experience');
 
         $controllers
-            ->get('/{language}/quote', new Page\Quote($application))
+            ->match('/{language}/quote-{step}', new Page\Quote($application))
             ->assert('language', $application['language_regexp'])
+            ->assert('step', 'form|requested')
+            ->value('step', 'form')
             ->bind('quote');
 
         return $controllers;

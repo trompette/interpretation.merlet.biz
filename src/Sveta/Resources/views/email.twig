@@ -1,0 +1,56 @@
+<html>
+	<body>
+		<p>Coucou&nbsp;!</p>
+
+		<p>Quelqu'un vient de faire une demande de devis.</p>
+
+		<p>Voici toutes les informations fournies par la personne&nbsp;:</p>
+
+		<table>
+			<tr>
+				<th>Civilité</th>
+				<td>{{ civility|default('—') }}</td>
+			</tr>
+			<tr>
+				<th>Nom</th>
+				<td>{{ firstName|default('—') }}</td>
+			</tr>
+			<tr>
+				<th>Prénom</th>
+				<td>{{ lastName|default('—') }}</td>
+			</tr>
+			<tr>
+				<th>Société</th>
+				<td>{{ company|default('—') }}</td>
+			</tr>
+			<tr>
+				<th>Téléphone</th>
+				<td>{{ phone|default('—') }}</td>
+			</tr>
+			<tr>
+				<th>E-mail</th>
+				<td>{{ email|default('—') }}</td>
+			</tr>
+			<tr>
+				<th>Service</th>
+				<td>{{ service|default('—') }}</td>
+			</tr>
+			<tr>
+				<th>Domaine</th>
+				<td>{{ area|default('—') }}</td>
+			</tr>
+			<tr>
+				<th>Langues</th>
+				<td>{{ languages|join(', ')|default('—') }}</td>
+			</tr>
+			<tr>
+				<th>Détails</th>
+				<td style="white-space:pre-wrap;">{{ details|default('—') }}</td>
+			</tr>
+		</table>
+
+		<p>Bonne continuation,<p>
+
+		<p>Le site.</p>
+	</body>
+</html>
