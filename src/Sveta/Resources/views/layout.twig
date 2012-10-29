@@ -38,7 +38,18 @@
             </div>
         </div>
         <div id="footer-container">
-            {% block footer %}{% endblock %}
+            {% block footer %}
+            {% set route = app.request.attributes.get('_route') %}
+            <p>
+                <a href="{{ path(route, {'language': 'french'}) }}">Version française</a>
+                &ndash;
+                <a href="{{ path(route, {'language': 'english'}) }}">English version</a>
+                &ndash;
+                <a href="{{ path(route, {'language': 'russian'}) }}">Русская версия</a>
+                &ndash;
+                <a href="{{ path(route, {'language': 'ukrainian'}) }}">Українська версія</a>
+            </p>
+            {% endblock %}
         </div>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="/js/bootstrap.js"></script>
