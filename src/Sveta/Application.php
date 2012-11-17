@@ -27,6 +27,8 @@ class Application extends SilexApplication
         $this->register(new UrlGeneratorServiceProvider);
 
         // configuring application
+        $this['ga_tracking_id'] = getenv('GA_TRACKING_ID');
+
         $this['languages'] = array(
             'fr' => 'french',
             'en' => 'english',
