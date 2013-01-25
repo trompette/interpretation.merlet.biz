@@ -6,7 +6,7 @@ use Sveta\ApplicationAware;
 
 class Service extends ApplicationAware
 {
-    public function __invoke($language)
+    public function render($language)
     {
         $this['monolog']->addInfo('Executing Service()');
 

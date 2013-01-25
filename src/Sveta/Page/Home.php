@@ -6,7 +6,7 @@ use Sveta\ApplicationAware;
 
 class Home extends ApplicationAware
 {
-    public function __invoke($language)
+    public function render($language)
     {
         $this['monolog']->addInfo('Executing Home()');
 

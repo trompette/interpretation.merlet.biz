@@ -5,6 +5,7 @@ namespace Sveta;
 use Monolog\Logger;
 use Silex\Application as SilexApplication;
 use Silex\Provider\MonologServiceProvider;
+use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\SwiftmailerServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
@@ -20,6 +21,7 @@ class Application extends SilexApplication
 
         // registering service providers
         $this->register(new MonologServiceProvider);
+        $this->register(new ServiceControllerServiceProvider);
         $this->register(new SwiftmailerServiceProvider);
         $this->register(new TwigServiceProvider);
         $this->register(new UrlGeneratorServiceProvider);

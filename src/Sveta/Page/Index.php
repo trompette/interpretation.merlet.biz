@@ -6,7 +6,7 @@ use Sveta\ApplicationAware;
 
 class Index extends ApplicationAware
 {
-    public function __invoke()
+    public function render()
     {
         $this['monolog']->addInfo('Executing Index()');
 

@@ -6,13 +6,13 @@ use Sveta\ApplicationAware;
 
 class Quote extends ApplicationAware
 {
-    public function __invoke($language)
+    public function render($language, $step)
     {
         $this['monolog']->addInfo('Executing Quote()');
 
         $request = $this['request'];
 
-        if ("POST" === $request->getMethod()) {
+        if ('form' === $step && 'POST' === $request->getMethod()) {
             $defaults = array(
                 'civility'  => '',
                 'firstName' => '',
