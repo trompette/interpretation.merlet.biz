@@ -1,12 +1,12 @@
 <?php
 
-namespace Sveta\Page;
+namespace Sveta\Controller;
 
 use Sveta\ApplicationAware;
 
 class Quote extends ApplicationAware
 {
-    public function render($language, $step)
+    public function execute($language, $step)
     {
         $this['monolog']->addInfo('Executing Quote()');
 

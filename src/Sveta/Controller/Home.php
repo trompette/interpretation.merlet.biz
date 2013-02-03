@@ -1,12 +1,12 @@
 <?php
 
-namespace Sveta\Page;
+namespace Sveta\Controller;
 
 use Sveta\ApplicationAware;
 
 class Home extends ApplicationAware
 {
-    public function render($language)
+    public function execute($language)
     {
         $this['monolog']->addInfo('Executing Home()');
 

@@ -11,49 +11,49 @@ class ControllerProvider implements ControllerProviderInterface
     {
         // adding services
         $application['sveta.index'] = $application->share(function() use ($application) {
-            return new Page\Index($application);
+            return new Controller\Index($application);
         });
 
         $application['sveta.home'] = $application->share(function() use ($application) {
-            return new Page\Home($application);
+            return new Controller\Home($application);
         });
 
         $application['sveta.service'] = $application->share(function() use ($application) {
-            return new Page\Service($application);
+            return new Controller\Service($application);
         });
 
         $application['sveta.experience'] = $application->share(function() use ($application) {
-            return new Page\Experience($application);
+            return new Controller\Experience($application);
         });
 
         $application['sveta.quote'] = $application->share(function() use ($application) {
-            return new Page\Quote($application);
+            return new Controller\Quote($application);
         });
 
         // adding routes
         $controllers = $application['controllers'];
 
         $controllers
-            ->get('/', 'sveta.index:render')
+            ->get('/', 'sveta.index:execute')
             ->bind('index');
 
         $controllers
-            ->get('/{language}/home', 'sveta.home:render')
+            ->get('/{language}/home', 'sveta.home:execute')
             ->assert('language', $application['language_regexp'])
             ->bind('home');
 
         $controllers
-            ->get('/{language}/service', 'sveta.service:render')
+            ->get('/{language}/service', 'sveta.service:execute')
             ->assert('language', $application['language_regexp'])
             ->bind('service');
 
         $controllers
-            ->get('/{language}/experience', 'sveta.experience:render')
+            ->get('/{language}/experience', 'sveta.experience:execute')
             ->assert('language', $application['language_regexp'])
             ->bind('experience');
 
         $controllers
-            ->match('/{language}/quote-{step}', 'sveta.quote:render')
+            ->match('/{language}/quote-{step}', 'sveta.quote:execute')
             ->assert('language', $application['language_regexp'])
             ->assert('step', 'form|requested')
             ->value('step', 'form')

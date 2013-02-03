@@ -1,12 +1,12 @@
 <?php
 
-namespace Sveta\Page;
+namespace Sveta\Controller;
 
 use Sveta\ApplicationAware;
 
 class Index extends ApplicationAware
 {
-    public function render()
+    public function execute()
     {
         $this['monolog']->addInfo('Executing Index()');
 
