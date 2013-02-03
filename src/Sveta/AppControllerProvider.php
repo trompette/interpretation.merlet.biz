@@ -9,28 +9,6 @@ class AppControllerProvider implements ControllerProviderInterface
 {
     public function connect(SilexApplication $application)
     {
-        // adding services
-        $application['sveta.index'] = $application->share(function() use ($application) {
-            return new Controller\Index($application);
-        });
-
-        $application['sveta.home'] = $application->share(function() use ($application) {
-            return new Controller\Home($application);
-        });
-
-        $application['sveta.service'] = $application->share(function() use ($application) {
-            return new Controller\Service($application);
-        });
-
-        $application['sveta.experience'] = $application->share(function() use ($application) {
-            return new Controller\Experience($application);
-        });
-
-        $application['sveta.quote'] = $application->share(function() use ($application) {
-            return new Controller\Quote($application);
-        });
-
-        // adding routes
         $controllers = $application['controllers'];
 
         $controllers

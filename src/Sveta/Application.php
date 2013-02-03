@@ -19,7 +19,7 @@ class Application extends SilexApplication
         // overloading defaults
         $this['debug'] = $debug;
 
-        // registering service providers
+        // registering core service providers
         $this->register(new MonologServiceProvider);
         $this->register(new ServiceControllerServiceProvider);
         $this->register(new SwiftmailerServiceProvider);
@@ -47,6 +47,9 @@ class Application extends SilexApplication
             $dir = __DIR__.'/Resources/views/'.$language;
             $this['twig.loader.filesystem']->addPath($dir, $language);
         }
+
+        // registering application service provider
+        $this->register(new AppServiceProvider);
 
         // mounting application routes
         $this->mount('/', new AppControllerProvider);
