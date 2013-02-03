@@ -49,7 +49,7 @@ class Application extends SilexApplication
         }
 
         // mounting application routes
-        $this->mount('/', new ControllerProvider);
+        $this->mount('/', new AppControllerProvider);
 
         // setting error handler
         //$this->error(new ErrorHandler($this));

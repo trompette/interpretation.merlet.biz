@@ -5,7 +5,7 @@ namespace Sveta;
 use Silex\Application as SilexApplication;
 use Silex\ControllerProviderInterface;
 
-class ControllerProvider implements ControllerProviderInterface
+class AppControllerProvider implements ControllerProviderInterface
 {
     public function connect(SilexApplication $application)
     {
