@@ -2,8 +2,6 @@
 
 namespace Sveta\Controller;
 
-use Sveta\ApplicationAware;
-
 class Experience extends ApplicationAware
 {
     public function execute()

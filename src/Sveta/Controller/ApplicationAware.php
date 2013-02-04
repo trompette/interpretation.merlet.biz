@@ -1,6 +1,6 @@
 <?php
 
-namespace Sveta;
+namespace Sveta\Controller;
 
 use Silex\Application;
 

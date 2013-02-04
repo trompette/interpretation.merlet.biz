@@ -2,8 +2,6 @@
 
 namespace Sveta\Controller;
 
-use Sveta\ApplicationAware;
-
 class Quote extends ApplicationAware
 {
     public function execute($step)

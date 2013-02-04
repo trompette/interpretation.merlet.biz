@@ -2,8 +2,6 @@
 
 namespace Sveta\Controller;
 
-use Sveta\ApplicationAware;
-
 class Home extends ApplicationAware
 {
     public function execute()
