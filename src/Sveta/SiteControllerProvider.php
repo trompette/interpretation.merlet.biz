@@ -2,37 +2,37 @@
 
 namespace Sveta;
 
-use Silex\Application as SilexApplication;
+use Silex\Application;
 use Silex\ControllerProviderInterface;
 
-class AppControllerProvider implements ControllerProviderInterface
+class SiteControllerProvider implements ControllerProviderInterface
 {
-    public function connect(SilexApplication $application)
+    public function connect(Application $application)
     {
         $language_regexp = implode('|', $application['languages']);
         $controllers = $application['controllers'];
 
         $controllers
-            ->get('/', 'sveta.index:execute')
+            ->get('/', 'controller.index:execute')
             ->bind('index');
 
         $controllers
-            ->get('/{language}/home', 'sveta.home:execute')
+            ->get('/{language}/home', 'controller.home:execute')
             ->assert('language', $language_regexp)
             ->bind('home');
 
         $controllers
-            ->get('/{language}/service', 'sveta.service:execute')
+            ->get('/{language}/service', 'controller.service:execute')
             ->assert('language', $language_regexp)
             ->bind('service');
 
         $controllers
-            ->get('/{language}/experience', 'sveta.experience:execute')
+            ->get('/{language}/experience', 'controller.experience:execute')
             ->assert('language', $language_regexp)
             ->bind('experience');
 
         $controllers
-            ->match('/{language}/quote-{step}', 'sveta.quote:execute')
+            ->match('/{language}/quote-{step}', 'controller.quote:execute')
             ->assert('language', $language_regexp)
             ->assert('step', 'form|requested')
             ->value('step', 'form')

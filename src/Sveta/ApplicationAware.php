@@ -2,7 +2,7 @@
 
 namespace Sveta;
 
-use Sveta\Application;
+use Silex\Application;
 
 abstract class ApplicationAware implements \ArrayAccess
 {
