@@ -4,6 +4,9 @@ namespace Sveta;
 
 use Silex\Application as SilexApplication;
 use Silex\ServiceProviderInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\KernelEvents;
 
 class AppServiceProvider implements ServiceProviderInterface
 {
@@ -32,6 +35,16 @@ class AppServiceProvider implements ServiceProviderInterface
 
     public function boot(SilexApplication $application)
     {
+        $application->before(function(Request $request) use ($application) {
+            if ($request->attributes->has('language')) {
+                $language = $request->attributes->get('language');
+            } else {
+                $language_tags = array_keys($application['languages']);
+                $language_tag = $request->getPreferredLanguage($language_tags);
+                $language = $application['languages'][$language_tag];
+            }
 
+            $application['language'] = $language;
+        });
     }
 }

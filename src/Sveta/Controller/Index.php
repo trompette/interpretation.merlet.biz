@@ -10,9 +10,6 @@ class Index extends ApplicationAware
     {
         $this['monolog']->addInfo('Executing Index()');
 
-        $language_tag = $this['request']->getPreferredLanguage($this['language_tags']);
-        $language = $this['languages'][$language_tag];
-
-        return $this->redirect($this['url_generator']->generate('home', array('language' => $language)));
+        return $this->redirect($this['url_generator']->generate('home', array('language' => $this['language'])));
     }
 }

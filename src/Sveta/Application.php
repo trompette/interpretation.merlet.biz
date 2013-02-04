@@ -35,8 +35,6 @@ class Application extends SilexApplication
             'ru' => 'russian',
             'uk' => 'ukrainian',
         );
-        $this['language_tags'] = array_keys($this['languages']);
-        $this['language_regexp'] = implode('|', $this['languages']);
 
         $this['monolog.level'] = $debug ? Logger::DEBUG : Logger::WARNING;
         $this['monolog.logfile'] = __DIR__.'/../../log/sveta.log';

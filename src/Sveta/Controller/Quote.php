@@ -6,7 +6,7 @@ use Sveta\ApplicationAware;
 
 class Quote extends ApplicationAware
 {
-    public function execute($language, $step)
+    public function execute($step)
     {
         $this['monolog']->addInfo('Executing Quote()');
 
@@ -36,13 +36,14 @@ class Quote extends ApplicationAware
                 ->setTo('interpretation@merlet.biz')
                 ->setBody($body, 'text/html');
 
+            // TODO: catch exception if any
             $this['mailer']->send($message);
 
-            return $this->redirect($this['url_generator']->generate('quote', array('language' => $language, 'step' => 'requested')));
+            return $this->redirect($this['url_generator']->generate('quote', array('language' => $this['language'], 'step' => 'requested')));
         }
 
-        $template = sprintf('@%s/quote.twig', $language);
+        $template = sprintf('@%s/quote.twig', $this['language']);
 
-        return $this['twig']->render($template, array('language' => $language));
+        return $this['twig']->render($template, array('language' => $this['language']));
     }
 }

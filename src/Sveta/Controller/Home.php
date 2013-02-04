@@ -6,12 +6,12 @@ use Sveta\ApplicationAware;
 
 class Home extends ApplicationAware
 {
-    public function execute($language)
+    public function execute()
     {
         $this['monolog']->addInfo('Executing Home()');
 
-        $template = sprintf('@%s/home.twig', $language);
+        $template = sprintf('@%s/home.twig', $this['language']);
 
-        return $this['twig']->render($template, array('language' => $language));
+        return $this['twig']->render($template, array('language' => $this['language']));
     }
 }

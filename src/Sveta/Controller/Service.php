@@ -6,12 +6,12 @@ use Sveta\ApplicationAware;
 
 class Service extends ApplicationAware
 {
-    public function execute($language)
+    public function execute()
     {
         $this['monolog']->addInfo('Executing Service()');
 
-        $template = sprintf('@%s/service.twig', $language);
+        $template = sprintf('@%s/service.twig', $this['language']);
 
-        return $this['twig']->render($template, array('language' => $language));
+        return $this['twig']->render($template, array('language' => $this['language']));
     }
 }
