@@ -10,6 +10,6 @@ class Service extends ApplicationAware
 
         $template = sprintf('@%s/service.twig', $this['language']);
 
-        return $this['twig']->render($template, array('language' => $this['language']));
+        return $this['twig']->render($template, ['language' => $this['language']]);
     }
 }

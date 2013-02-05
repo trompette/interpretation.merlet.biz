@@ -10,6 +10,6 @@ class Experience extends ApplicationAware
 
         $template = sprintf('@%s/experience.twig', $this['language']);
 
-        return $this['twig']->render($template, array('language' => $this['language']));
+        return $this['twig']->render($template, ['language' => $this['language']]);
     }
 }

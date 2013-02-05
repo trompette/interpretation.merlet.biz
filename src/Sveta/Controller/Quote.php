@@ -11,7 +11,7 @@ class Quote extends ApplicationAware
         $this['monolog']->addInfo('Executing Quote()');
 
         if ('form' === $step && 'POST' === $request->getMethod()) {
-            $defaults = array(
+            $defaults = [
                 'civility'  => '',
                 'firstName' => '',
                 'lastName'  => '',
@@ -20,9 +20,9 @@ class Quote extends ApplicationAware
                 'email'     => '',
                 'service'   => '',
                 'area'      => '',
-                'languages' => array(),
+                'languages' => [],
                 'details'   => '',
-            );
+            ];
 
             $params = array_merge($defaults, $request->request->get('form'));
 
@@ -37,11 +37,11 @@ class Quote extends ApplicationAware
             // TODO: catch exception if any
             $this['mailer']->send($message);
 
-            return $this->redirect($this['url_generator']->generate('quote', array('language' => $this['language'], 'step' => 'requested')));
+            return $this->redirect($this['url_generator']->generate('quote', ['language' => $this['language'], 'step' => 'requested']));
         }
 
         $template = sprintf('@%s/quote.twig', $this['language']);
 
-        return $this['twig']->render($template, array('language' => $this['language']));
+        return $this['twig']->render($template, ['language' => $this['language']]);
     }
 }

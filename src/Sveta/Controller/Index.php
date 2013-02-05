@@ -8,6 +8,6 @@ class Index extends ApplicationAware
     {
         $this['monolog']->addInfo('Executing Index()');
 
-        return $this->redirect($this['url_generator']->generate('home', array('language' => $this['language'])));
+        return $this->redirect($this['url_generator']->generate('home', ['language' => $this['language']]));
     }
 }

@@ -19,12 +19,12 @@ class FrontController
         $this->application = new Application;
 
         // configuring application
-        $this->application['languages'] = array(
+        $this->application['languages'] = [
             'fr' => 'french',
             'en' => 'english',
             'ru' => 'russian',
             'uk' => 'ukrainian',
-        );
+        ];
         $this->application['ga_tracking_id'] = $ga_tracking_id;
         $this->application['debug'] = $debug;
 
