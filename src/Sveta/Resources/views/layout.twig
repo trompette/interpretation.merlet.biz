@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/css/styles.css" />
     </head>
     <body>
-        <div id="header-container" class="container-fluid">
+        <header class="container-fluid">
             <div class="row-fluid">
                 <div class="span9">
                     <h1>
@@ -23,24 +23,24 @@
                     {% include '_language_select.twig' %}
                 </div>
             </div>
-        </div>
-        <div id="content-container">
-            <div id="content-container-inner" class="container-fluid">
-                <div class="navbar row-fluid">
+        </header>
+        <section>
+            <div class="container-fluid">
+                <nav class="navbar row-fluid">
                     <div class="navbar-inner">
                         {% block navbar %}{% endblock %}
                     </div>
-                </div>
-                <div class="row-fluid">
+                </nav>
+                <article class="row-fluid">
                     {% block aside %}{% endblock %}
                     {% block content %}{% endblock %}
-                </div>
+                </article>
             </div>
-        </div>
-        <div id="footer-container">
+        </section>
+        <footer>
             {% block footer %}{% endblock %}
             {% include '_footer_links.twig' %}
-        </div>
+        </footer>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="/js/bootstrap.js"></script>
         <script src="/js/script.js"></script>
