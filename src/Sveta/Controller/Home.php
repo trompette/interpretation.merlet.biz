@@ -8,8 +8,6 @@ class Home extends ApplicationAware
     {
         $this['monolog']->addInfo('Executing Home()');
 
-        $template = sprintf('@%s/home.twig', $this['language']);
-
-        return $this['twig']->render($template, ['language' => $this['language']]);
+        return $this['twig']->render('template.twig');
     }
 }

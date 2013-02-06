@@ -1,4 +1,3 @@
-{% set route = app.request.attributes.get('_route') %}
 <select id="language-select">
     <option value="{{ path(route, {'language': 'french'}) }}" {% if language == 'french' %}selected="selected"{% endif %}>
     	Version française

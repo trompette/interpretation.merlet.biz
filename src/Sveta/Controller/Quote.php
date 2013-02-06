@@ -40,8 +40,6 @@ class Quote extends ApplicationAware
             return $this->redirect($this['url_generator']->generate('quote', ['language' => $this['language'], 'step' => 'requested']));
         }
 
-        $template = sprintf('@%s/quote.twig', $this['language']);
-
-        return $this['twig']->render($template, ['language' => $this['language']]);
+        return $this['twig']->render('template.twig');
     }
 }

@@ -8,8 +8,6 @@ class Service extends ApplicationAware
     {
         $this['monolog']->addInfo('Executing Service()');
 
-        $template = sprintf('@%s/service.twig', $this['language']);
-
-        return $this['twig']->render($template, ['language' => $this['language']]);
+        return $this['twig']->render('template.twig');
     }
 }

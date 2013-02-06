@@ -1,0 +1,4 @@
+{% set language = app.language %}
+{% set route = app.request.attributes.get('_route') %}
+
+{% include '@' ~ language ~ '/' ~ route ~ '.twig' %}

@@ -8,8 +8,6 @@ class Experience extends ApplicationAware
     {
         $this['monolog']->addInfo('Executing Experience()');
 
-        $template = sprintf('@%s/experience.twig', $this['language']);
-
-        return $this['twig']->render($template, ['language' => $this['language']]);
+        return $this['twig']->render('template.twig');
     }
 }
