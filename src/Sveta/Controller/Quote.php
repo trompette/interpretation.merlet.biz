@@ -2,13 +2,13 @@
 
 namespace Sveta\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+
 class Quote extends ApplicationAware
 {
-    public function execute($step)
+    public function execute($step, Request $request)
     {
         $this['monolog']->addInfo('Executing Quote()');
-
-        $request = $this['request'];
 
         if ('form' === $step && 'POST' === $request->getMethod()) {
             $defaults = array(
