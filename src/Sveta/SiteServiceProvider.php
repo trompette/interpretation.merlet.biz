@@ -5,14 +5,12 @@ namespace Sveta;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
-use Symfony\Component\HttpKernel\KernelEvents;
 
 class SiteServiceProvider implements ServiceProviderInterface
 {
-	public function register(Application $application)
-	{
-		$application['controller.index'] = $application->share(function() use ($application) {
+    public function register(Application $application)
+    {
+        $application['controller.index'] = $application->share(function() use ($application) {
             return new Controller\Index($application);
         });
 
@@ -31,20 +29,20 @@ class SiteServiceProvider implements ServiceProviderInterface
         $application['controller.quote'] = $application->share(function() use ($application) {
             return new Controller\Quote($application);
         });
-	}
+    }
 
     public function boot(Application $application)
     {
         $application->before(function(Request $request) use ($application) {
-            if ($request->attributes->has('language')) {
-                $language = $request->attributes->get('language');
-            } else {
+            if (!$request->attributes->has('language')) {
+                // guessing the preferred language
                 $language_tags = array_keys($application['languages']);
                 $language_tag = $request->getPreferredLanguage($language_tags);
                 $language = $application['languages'][$language_tag];
-            }
 
-            $application['language'] = $language;
+                // adding language attribute to the request
+                $request->attributes->set('language', $language);
+            }
         });
     }
 }

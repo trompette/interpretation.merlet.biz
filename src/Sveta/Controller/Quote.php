@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class Quote extends ApplicationAware
 {
-    public function execute($step, Request $request)
+    public function execute($language, $step, Request $request)
     {
         $this['monolog']->addInfo('Executing Quote()');
 
@@ -37,7 +37,7 @@ class Quote extends ApplicationAware
             // TODO: catch exception if any
             $this['mailer']->send($message);
 
-            return $this->redirect($this['url_generator']->generate('quote', ['language' => $this['language'], 'step' => 'requested']));
+            return $this->redirect($this['url_generator']->generate('quote', ['language' => $language, 'step' => 'requested']));
         }
 
         return $this['twig']->render('template.twig');

@@ -4,7 +4,7 @@ namespace Sveta\Controller;
 
 class Service extends ApplicationAware
 {
-    public function execute()
+    public function execute($language)
     {
         $this['monolog']->addInfo('Executing Service()');
 
