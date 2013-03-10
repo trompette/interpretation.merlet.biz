@@ -41,6 +41,9 @@ class FrontController
         $this->application['monolog.logfile'] = __DIR__.'/../../log/sveta.log';
         $this->application['monolog.name'] = 'sveta';
 
+        // overloading swiftmailer configuration
+        $this->application['swiftmailer.options'] = ['host' => 'localhost', 'port' => '25'];
+
         // overloading twig configuration
         $this->application['twig.path'] = __DIR__.'/Resources/views';
         foreach ($this->application['languages'] as $ns) {

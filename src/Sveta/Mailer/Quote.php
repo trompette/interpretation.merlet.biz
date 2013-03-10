@@ -2,17 +2,16 @@
 
 namespace Sveta\Mailer;
 
+use Swift_SwiftException;
+
 class Quote
 {
     public function __construct($mailer, $twig)
     {
         $this->mailer = $mailer;
         $this->twig = $twig;
-    }
 
-    public function send($params)
-    {
-        $defaults = [
+        $this->params = [
             'civility'  => '',
             'firstName' => '',
             'lastName'  => '',
@@ -24,10 +23,18 @@ class Quote
             'languages' => [],
             'details'   => '',
         ];
+    }
 
-        $params = array_merge($defaults, $params);
+    public function configure($params)
+    {
+        $this->params = array_merge($params, $this->params);
 
-        $body = $this->twig->render('email.twig', $params);
+        return $this;
+    }
+
+    public function send()
+    {
+        $body = $this->twig->render('email.twig', $this->params);
 
         $message = \Swift_Message::newInstance()
             ->setSubject('Demande de devis sur le site')
@@ -35,7 +42,10 @@ class Quote
             ->setTo('interpretation@merlet.biz')
             ->setBody($body, 'text/html');
 
-        // TODO: catch exception if any
-        $this->mailer->send($message);
+        try {
+            $this->mailer->send($message);
+        } catch (Swift_SwiftException $e) {
+            // TODO: log exception message
+        }
     }
 }

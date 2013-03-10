@@ -20,7 +20,7 @@ class Quote
         $this->monolog->addInfo('Executing Quote()');
 
         if ('form' === $step && 'POST' === $request->getMethod()) {
-            $this->quoteMailer->send($request->request->get('form'));
+            $this->quoteMailer->configure($request->request->get('form'))->send();
 
             return new RedirectResponse($this->urlGenerator->generate('quote', ['language' => $language, 'step' => 'requested']));
         }
