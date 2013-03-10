@@ -2,12 +2,18 @@
 
 namespace Sveta\Controller;
 
-class Home extends ApplicationAware
+class Home
 {
+    public function __construct($monolog, $twig)
+    {
+        $this->monolog = $monolog;
+        $this->twig = $twig;
+    }
+
     public function execute($language)
     {
-        $this['monolog']->addInfo('Executing Home()');
+        $this->monolog->addInfo('Executing Home()');
 
-        return $this['twig']->render('template.twig');
+        return $this->twig->render('template.twig');
     }
 }

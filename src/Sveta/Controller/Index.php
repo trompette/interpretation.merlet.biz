@@ -2,12 +2,20 @@
 
 namespace Sveta\Controller;
 
-class Index extends ApplicationAware
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+class Index
 {
+    public function __construct($monolog, $urlGenerator)
+    {
+        $this->monolog = $monolog;
+        $this->urlGenerator = $urlGenerator;
+    }
+
     public function execute($language)
     {
-        $this['monolog']->addInfo('Executing Index()');
+        $this->monolog->addInfo('Executing Index()');
 
-        return $this->redirect($this['url_generator']->generate('home', ['language' => $language]));
+        return new RedirectResponse($this->urlGenerator->generate('home', ['language' => $language]));
     }
 }
