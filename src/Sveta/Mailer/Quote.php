@@ -27,7 +27,7 @@ class Quote
 
     public function configure($params)
     {
-        $this->params = array_merge($params, $this->params);
+        $this->params = array_merge($this->params, $params);
 
         return $this;
     }
