@@ -10,5 +10,8 @@
         "psr-0": {
             "Sveta": "src/"
         }
+    },
+    "scripts": {
+        "post-autoload-dump": "test -d log || mkdir log"
     }
 }
