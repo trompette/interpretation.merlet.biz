@@ -1,11 +1,10 @@
 twig:
     paths:
         '%kernel.project_dir%/templates': ~
-        '%kernel.project_dir%/src/Sveta/Resources/views': ~
-        '%kernel.project_dir%/src/Sveta/Resources/views/english': english
-        '%kernel.project_dir%/src/Sveta/Resources/views/french': french
-        '%kernel.project_dir%/src/Sveta/Resources/views/russian': russian
-        '%kernel.project_dir%/src/Sveta/Resources/views/ukrainian': ukrainian
+        '%kernel.project_dir%/templates/english': english
+        '%kernel.project_dir%/templates/french': french
+        '%kernel.project_dir%/templates/russian': russian
+        '%kernel.project_dir%/templates/ukrainian': ukrainian
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     globals:
