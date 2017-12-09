@@ -21,7 +21,7 @@ class Quote
 
     public function execute($language, $step, Request $request)
     {
-        $this->monolog->addInfo('Executing Quote()');
+        $this->monolog->info('Executing Quote()');
 
         if ('form' === $step && 'POST' === $request->getMethod()) {
             $this->quoteMailer->configure($request->request->get('form'))->send();

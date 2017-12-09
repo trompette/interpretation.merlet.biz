@@ -16,7 +16,7 @@ class Index
 
     public function execute($language)
     {
-        $this->monolog->addInfo('Executing Index()');
+        $this->monolog->info('Executing Index()');
 
         return new RedirectResponse($this->urlGenerator->generate('home', ['language' => $language]));
     }

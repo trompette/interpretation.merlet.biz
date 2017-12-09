@@ -15,7 +15,7 @@ class Home
 
     public function execute($language)
     {
-        $this->monolog->addInfo('Executing Home()');
+        $this->monolog->info('Executing Home()');
 
         return $this->twig->render('template.twig');
     }

@@ -15,7 +15,7 @@ class Experience
 
     public function execute($language)
     {
-        $this->monolog->addInfo('Executing Experience()');
+        $this->monolog->info('Executing Experience()');
 
         return $this->twig->render('template.twig');
     }

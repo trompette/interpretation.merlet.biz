@@ -15,7 +15,7 @@ class Service
 
     public function execute($language)
     {
-        $this->monolog->addInfo('Executing Service()');
+        $this->monolog->info('Executing Service()');
 
         return $this->twig->render('template.twig');
     }
