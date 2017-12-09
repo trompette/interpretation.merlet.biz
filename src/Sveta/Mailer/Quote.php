@@ -37,7 +37,7 @@ class Quote
     {
         $body = $this->twig->render('email.twig', $this->params);
 
-        $message = \Swift_Message::newInstance()
+        $message = $this->mailer->createMessage()
             ->setSubject('Demande de devis sur le site')
             ->setFrom('interpretation@merlet.biz')
             ->setTo('interpretation@merlet.biz')
