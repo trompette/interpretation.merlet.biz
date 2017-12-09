@@ -1,17 +1,43 @@
 {
     "require": {
-        "php": ">=5.4",
-        "silex/silex": "~1.0",
-        "swiftmailer/swiftmailer": "~5.0",
-        "symfony/monolog-bridge": "~2.2",
-        "symfony/twig-bridge": "~2.2"
+        "php": "^7.0.8",
+        "symfony/console": "^3.4",
+        "symfony/flex": "^1.0",
+        "symfony/framework-bundle": "^3.4",
+        "symfony/lts": "^3",
+        "symfony/yaml": "^3.4"
+    },
+    "require-dev": {
+        "symfony/dotenv": "^3.4"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
     },
     "autoload": {
-        "psr-0": {
-            "Sveta": "src/"
+        "psr-4": {
+            "Sveta\\": "src/Sveta/"
         }
     },
     "scripts": {
-        "post-autoload-dump": "test -d log || mkdir log"
+        "auto-scripts": [
+        ],
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "id": "",
+            "allow-contrib": false
+        }
     }
 }
