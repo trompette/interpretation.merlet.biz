@@ -3,6 +3,7 @@
 namespace Sveta\Controller;
 
 use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
 class Home
@@ -17,6 +18,6 @@ class Home
     {
         $this->monolog->info('Executing Home()');
 
-        return $this->twig->render('template.twig');
+        return new Response($this->twig->render('template.twig'));
     }
 }

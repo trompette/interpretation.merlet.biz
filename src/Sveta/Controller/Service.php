@@ -3,6 +3,7 @@
 namespace Sveta\Controller;
 
 use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
 class Service
@@ -17,6 +18,6 @@ class Service
     {
         $this->monolog->info('Executing Service()');
 
-        return $this->twig->render('template.twig');
+        return new Response($this->twig->render('template.twig'));
     }
 }

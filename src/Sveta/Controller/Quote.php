@@ -6,6 +6,7 @@ use Psr\Log\LoggerInterface;
 use Sveta\Mailer\Quote as QuoteMailer;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Twig\Environment;
 
@@ -29,6 +30,6 @@ class Quote
             return new RedirectResponse($this->urlGenerator->generate('quote', ['language' => $language, 'step' => 'requested']));
         }
 
-        return $this->twig->render('template.twig');
+        return new Response($this->twig->render('template.twig'));
     }
 }
