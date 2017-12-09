@@ -1,3 +1,34 @@
-#index:
-#    path: /
-#    defaults: { _controller: 'App\Controller\DefaultController::index' }
+index:
+    path: /
+    defaults:
+        _controller: 'Sveta\Controller\Index::execute'
+
+home:
+    path: /{language}/home
+    defaults:
+        _controller: 'Sveta\Controller\Home::execute'
+    requirements:
+        language: french|english|russian|ukrainian
+
+service:
+    path: /{language}/service
+    defaults:
+        _controller: 'Sveta\Controller\Service::execute'
+    requirements:
+        language: french|english|russian|ukrainian
+
+experience:
+    path: /{language}/experience
+    defaults:
+        _controller: 'Sveta\Controller\Experience::execute'
+    requirements:
+        language: french|english|russian|ukrainian
+
+quote:
+    path: /{language}/quote-{step}
+    defaults:
+        _controller: 'Sveta\Controller\Quote::execute'
+        step: form
+    requirements:
+        language: french|english|russian|ukrainian
+        step: form|requested
