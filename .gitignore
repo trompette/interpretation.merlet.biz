@@ -1,6 +1,4 @@
 composer.phar
-log/
-vendor/
 
 ###> symfony/framework-bundle ###
 .env
