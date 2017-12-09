@@ -2,9 +2,12 @@
 
 namespace Sveta\Controller;
 
+use Psr\Log\LoggerInterface;
+use Twig\Environment;
+
 class Service
 {
-    public function __construct($monolog, $twig)
+    public function __construct(LoggerInterface $monolog, Environment $twig)
     {
         $this->monolog = $monolog;
         $this->twig = $twig;

@@ -3,10 +3,11 @@
 namespace Sveta\Mailer;
 
 use Swift_SwiftException;
+use Twig\Environment;
 
 class Quote
 {
-    public function __construct($mailer, $twig)
+    public function __construct(\Swift_Mailer $mailer, Environment $twig)
     {
         $this->mailer = $mailer;
         $this->twig = $twig;

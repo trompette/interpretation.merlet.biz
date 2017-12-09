@@ -2,12 +2,16 @@
 
 namespace Sveta\Controller;
 
+use Psr\Log\LoggerInterface;
+use Sveta\Mailer\Quote as QuoteMailer;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Twig\Environment;
 
 class Quote
 {
-    public function __construct($monolog, $urlGenerator, $twig, $quoteMailer)
+    public function __construct(LoggerInterface $monolog, UrlGeneratorInterface $urlGenerator, Environment $twig, QuoteMailer $quoteMailer)
     {
         $this->monolog = $monolog;
         $this->urlGenerator = $urlGenerator;
