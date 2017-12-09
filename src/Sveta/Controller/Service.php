@@ -2,9 +2,13 @@
 
 namespace Sveta\Controller;
 
+use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\Response;
+use Twig\Environment;
+
 class Service
 {
-    public function __construct($monolog, $twig)
+    public function __construct(LoggerInterface $monolog, Environment $twig)
     {
         $this->monolog = $monolog;
         $this->twig = $twig;
@@ -12,8 +16,8 @@ class Service
 
     public function execute($language)
     {
-        $this->monolog->addInfo('Executing Service()');
+        $this->monolog->info('Executing Service()');
 
-        return $this->twig->render('template.twig');
+        return new Response($this->twig->render('template.twig'));
     }
 }

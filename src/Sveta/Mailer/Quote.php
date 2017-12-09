@@ -3,10 +3,11 @@
 namespace Sveta\Mailer;
 
 use Swift_SwiftException;
+use Twig\Environment;
 
 class Quote
 {
-    public function __construct($mailer, $twig)
+    public function __construct(\Swift_Mailer $mailer, Environment $twig)
     {
         $this->mailer = $mailer;
         $this->twig = $twig;
@@ -36,7 +37,7 @@ class Quote
     {
         $body = $this->twig->render('email.twig', $this->params);
 
-        $message = \Swift_Message::newInstance()
+        $message = $this->mailer->createMessage()
             ->setSubject('Demande de devis sur le site')
             ->setFrom('interpretation@merlet.biz')
             ->setTo('interpretation@merlet.biz')
