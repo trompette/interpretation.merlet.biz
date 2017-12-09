@@ -22,8 +22,10 @@
         }
     },
     "scripts": {
-        "auto-scripts": [
-        ],
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+        },
         "post-install-cmd": [
             "@auto-scripts"
         ],
@@ -36,7 +38,7 @@
     },
     "extra": {
         "symfony": {
-            "id": "",
+            "id": "01C0EM3TK8H6VN1CDDPA63Z0VM",
             "allow-contrib": false
         }
     }
