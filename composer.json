@@ -1,10 +1,11 @@
 {
+    "name": "trompette/interpretation.merlet.biz",
+    "description": "my wife's website",
     "require": {
         "php": "^7.0.8",
         "symfony/console": "^3.4",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^3.4",
-        "symfony/lts": "^3",
         "symfony/swiftmailer-bundle": "^3.1",
         "symfony/twig-bundle": "^3.4",
         "symfony/yaml": "^3.4"
@@ -44,7 +45,8 @@
     "extra": {
         "symfony": {
             "id": "01C0EM3TK8H6VN1CDDPA63Z0VM",
-            "allow-contrib": false
+            "allow-contrib": false,
+            "require": "^3.4"
         }
     }
 }
