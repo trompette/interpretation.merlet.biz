@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+cd "$(dirname $0)/.." || exit
+git pull https://github.com/trompette/interpretation.merlet.biz master
+php composer.phar install --no-dev --optimize-autoloader
+echo Deployed.
