@@ -2,5 +2,6 @@
 
 cd "$(dirname $0)/.." || exit
 git pull --all --prune
-php bin/composer install --no-dev --optimize-autoloader
+php bin/composer install --no-dev --no-scripts --optimize-autoloader
+php bin/console cache:clear
 echo Deployed.
