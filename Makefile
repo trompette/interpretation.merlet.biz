@@ -6,7 +6,7 @@ help:
 
 .PHONY: up
 up: ## Start development environment
-	@docker-compose up --detach
+	@docker-compose up --build --detach
 
 .PHONY: ps
 ps: ## Show development environment

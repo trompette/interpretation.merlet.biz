@@ -1,7 +1,5 @@
 <?php
 
-namespace Test;
-
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class SmokeTest extends WebTestCase
@@ -12,7 +10,7 @@ class SmokeTest extends WebTestCase
         $client = static::createClient();
         $client->request('GET', '/');
 
-        $this->assertTrue($client->getResponse()->isRedirect());
+        self::assertTrue($client->getResponse()->isRedirect());
     }
 
     /** @test @dataProvider pages */
@@ -21,7 +19,7 @@ class SmokeTest extends WebTestCase
         $client = static::createClient();
         $client->request('GET', $path);
 
-        $this->assertContains($text, $client->getResponse()->getContent());
+        self::assertContains($text, $client->getResponse()->getContent());
     }
 
     public function pages()
