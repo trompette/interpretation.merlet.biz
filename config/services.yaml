@@ -5,8 +5,8 @@ services:
         public: false
 
     Sveta\:
-        resource: '../src/Sveta/*'
+        resource: '../src/*'
 
     Sveta\Controller\:
-        resource: '../src/Sveta/Controller'
+        resource: '../src/Controller'
         tags: ['controller.service_arguments']
