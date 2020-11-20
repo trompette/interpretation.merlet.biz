@@ -33,12 +33,12 @@
         "version": "v3.4.0"
     },
     "symfony/console": {
-        "version": "3.3",
+        "version": "4.4",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "3.3",
-            "ref": "5b06148c10d442bf536a4d3017cadb3a99fd9135"
+            "version": "4.4",
+            "ref": "ea8c0eda34fda57e7d5cd8cbd889e2a387e3472c"
         },
         "files": [
             "bin/console",
@@ -88,18 +88,20 @@
         ]
     },
     "symfony/framework-bundle": {
-        "version": "3.4",
+        "version": "4.4",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "3.4",
-            "ref": "903c28f0ce372b8414cc569a8832428737e8abd1"
+            "version": "4.4",
+            "ref": "df1f2fe60b8fbb5cf7e26a7af19445c128a13b90"
         },
         "files": [
             "config/bootstrap.php",
             "config/packages/cache.yaml",
             "config/packages/framework.yaml",
             "config/packages/test/framework.yaml",
+            "config/preload.php",
+            "config/routes/dev/framework.yaml",
             "config/services.yaml",
             "public/index.php",
             "src/Controller/.gitignore",
@@ -119,12 +121,12 @@
         "version": "v4.4.16"
     },
     "symfony/phpunit-bridge": {
-        "version": "3.3",
+        "version": "4.3",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "3.3",
-            "ref": "7e941371431f5245d05c6490ada44c17eb0d27ed"
+            "version": "4.3",
+            "ref": "6d0e35f749d5f4bfe1f011762875275cd3f9874f"
         },
         "files": [
             ".env.test",
@@ -158,15 +160,16 @@
         "version": "v1.20.0"
     },
     "symfony/routing": {
-        "version": "3.3",
+        "version": "4.2",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "3.3",
-            "ref": "eb64cc2de2fa548a89fbf1446d37b391c9a9e936"
+            "version": "4.2",
+            "ref": "683dcb08707ba8d41b7e34adb0344bfd68d248a7"
         },
         "files": [
             "config/packages/prod/routing.yaml",
+            "config/packages/routing.yaml",
             "config/routes.yaml"
         ]
     },
@@ -194,17 +197,16 @@
         "version": "v3.4.0"
     },
     "symfony/twig-bundle": {
-        "version": "3.3",
+        "version": "4.4",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "3.3",
-            "ref": "1da1987340b5ba64b16383906d678b989e3d096e"
+            "version": "4.4",
+            "ref": "15a41bbd66a1323d09824a189b485c126bbefa51"
         },
         "files": [
             "config/packages/test/twig.yaml",
             "config/packages/twig.yaml",
-            "config/routes/dev/twig.yaml",
             "templates/base.html.twig"
         ]
     },

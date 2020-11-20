@@ -7,5 +7,6 @@ twig:
         '%kernel.project_dir%/templates/ukrainian': ukrainian
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    exception_controller: null
     globals:
         ga_tracking_id: '%env(GA_TRACKING_ID)%'

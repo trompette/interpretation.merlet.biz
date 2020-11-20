@@ -19,7 +19,7 @@ class SmokeTest extends WebTestCase
         $client = static::createClient();
         $client->request('GET', $path);
 
-        self::assertContains($text, $client->getResponse()->getContent());
+        self::assertStringContainsString($text, $client->getResponse()->getContent());
     }
 
     public function pages()
