@@ -1,12 +1,8 @@
-{% extends '@ukrainian/layout.twig' %}
+{% extends 'ukrainian/layout.twig' %}
 
 {% block page_title %}
     Про мене - {{ parent() }}
 {% endblock %}
-
-{#% block header_title %}{% endblock %#}
-
-{#% block header_lead %}{% endblock %#}
 
 {% block navbar %}
     <ul class="nav">
@@ -16,8 +12,6 @@
         <li class=""><a href="/ukrainian/quote"><i class="icon-question-sign"></i> Розрахунок вартості замовлення</a></li>
     </ul>
 {% endblock %}
-
-{#% block aside %}{% endblock %#}
 
 {% block content %}
     <h3>Вітаю на моєму сайті!</h3>
@@ -39,5 +33,3 @@
 
     <p>Буду рада сумісній співпраці!</p>
 {% endblock %}
-
-{#% block footer %}{% endblock %#}

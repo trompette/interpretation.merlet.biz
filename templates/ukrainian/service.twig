@@ -1,12 +1,8 @@
-{% extends '@ukrainian/layout.twig' %}
+{% extends 'ukrainian/layout.twig' %}
 
 {% block page_title %}
     Мої послуги - {{ parent() }}
 {% endblock %}
-
-{#% block header_title %}{% endblock %#}
-
-{#% block header_lead %}{% endblock %#}
 
 {% block navbar %}
     <ul class="nav">
@@ -16,8 +12,6 @@
         <li class=""><a href="/ukrainian/quote"><i class="icon-question-sign"></i> Розрахунок вартості замовлення</a></li>
     </ul>
 {% endblock %}
-
-{#% block aside %}{% endblock %#}
 
 {% block content %}
     <h3>Синхронний переклад</h3>
@@ -44,5 +38,3 @@
 
     <p>Письмовий переклад, на відміну від усного перекладу, полягає в письмовому перенесенні сенсу з однієї мови в іншу, враховуючи при цьому граматичні, лексичні та стилістичні особливості документа, що перекладається в такий спосіб. Прикладами письмового перекладу текстів технічного характеру є переклади: контрактів, інструкцій, статей, описів, доповідей, рефератів, тощо.</p>
 {% endblock %}
-
-{#% block footer %}{% endblock %#}

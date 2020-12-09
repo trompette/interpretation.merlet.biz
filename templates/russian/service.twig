@@ -1,12 +1,8 @@
-{% extends '@russian/layout.twig' %}
+{% extends 'russian/layout.twig' %}
 
 {% block page_title %}
     Мои услуги - {{ parent() }}
 {% endblock %}
-
-{#% block header_title %}{% endblock %#}
-
-{#% block header_lead %}{% endblock %#}
 
 {% block navbar %}
     <ul class="nav">
@@ -16,8 +12,6 @@
         <li class=""><a href="/russian/quote"><i class="icon-question-sign"></i> Бесплатный расчёт стоимости</a></li>
     </ul>
 {% endblock %}
-
-{#% block aside %}{% endblock %#}
 
 {% block content %}
     <h3>Синхронный перевод</h3>
@@ -44,5 +38,3 @@
 
     <p>Письменный перевод, в отличие от устного перевода, заключается в письменном переносе смысла из одного языка в другой, учитывая при этом грамматические, лексические и стилистические особенности переводимого таким способом документа. Примерами письменного перевода текстов технического характера являются переводы: контрактов, инструкций, статей, описаний, докладов, рефератов и т.д.</p>
 {% endblock %}
-
-{#% block footer %}{% endblock %#}

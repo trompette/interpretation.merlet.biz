@@ -1,12 +1,8 @@
-{% extends '@french/layout.twig' %}
+{% extends 'french/layout.twig' %}
 
 {% block page_title %}
     Accueil - {{ parent() }}
 {% endblock %}
-
-{#% block header_title %}{% endblock %#}
-
-{#% block header_lead %}{% endblock %#}
 
 {% block navbar %}
     <ul class="nav">
@@ -16,8 +12,6 @@
         <li class=""><a href="/french/quote"><i class="icon-question-sign"></i> Demande de devis</a></li>
     </ul>
 {% endblock %}
-
-{#% block aside %}{% endblock %#}
 
 {% block content %}
     <h3>Bienvenue !</h3>
@@ -39,5 +33,3 @@
 
     <p>N'hésitez pas à <a href="/french/quote">me contacter</a> en cas de besoin.</p>
 {% endblock %}
-
-{#% block footer %}{% endblock %#}

@@ -1,12 +1,8 @@
-{% extends '@russian/layout.twig' %}
+{% extends 'russian/layout.twig' %}
 
 {% block page_title %}
     Опыт и образование - {{ parent() }}
 {% endblock %}
-
-{#% block header_title %}{% endblock %#}
-
-{#% block header_lead %}{% endblock %#}
 
 {% block navbar %}
     <ul class="nav">
@@ -16,8 +12,6 @@
         <li class=""><a href="/russian/quote"><i class="icon-question-sign"></i> Бесплатный расчёт стоимости</a></li>
     </ul>
 {% endblock %}
-
-{#% block aside %}{% endblock %#}
 
 {% block content %}
     <h3>Мой опыт</h3>
@@ -143,5 +137,3 @@
         <li>2006 год  - <a href="http://www.univer.kharkov.ua/en">Харьковский национальный университет им. В.Н. Каразина</a>, <a href="http://www-foreign.univer.kharkov.ua/eng/index.html">факультет иностранных языков</a>, кафедра английской филологии. «Бакалавр» Филолог, преподаватель английского языка и литературы.</li>
     </ul>
 {% endblock %}
-
-{#% block footer %}{% endblock %#}

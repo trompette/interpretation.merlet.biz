@@ -1,12 +1,8 @@
-{% extends '@french/layout.twig' %}
+{% extends 'french/layout.twig' %}
 
 {% block page_title %}
     Mes services - {{ parent() }}
 {% endblock %}
-
-{#% block header_title %}{% endblock %#}
-
-{#% block header_lead %}{% endblock %#}
 
 {% block navbar %}
     <ul class="nav">
@@ -16,8 +12,6 @@
         <li class=""><a href="/french/quote"><i class="icon-question-sign"></i> Demande de devis</a></li>
     </ul>
 {% endblock %}
-
-{#% block aside %}{% endblock %#}
 
 {% block content %}
     <h3>Interprétation simultanée</h3>
@@ -44,5 +38,3 @@
 
     <p>A l'opposé de l'inteprétation, la traduction s'effectue de manière écrite. Le but est de reproduire le texte d'un document non littéraire en le convertissant d'une langue de départ vers une langue d'arrivée. Il est nécessaire de tenir compte des particularités grammaticales, lexicales et stylistiques du document écrit lors de sa traduction. Ce service s'applique par exemple aux contrats, notices, manuels d'utilisation, sites internet.</p>
 {% endblock %}
-
-{#% block footer %}{% endblock %#}

@@ -1,12 +1,8 @@
-{% extends '@french/layout.twig' %}
+{% extends 'french/layout.twig' %}
 
 {% block page_title %}
     Mon parcours - {{ parent() }}
 {% endblock %}
-
-{#% block header_title %}{% endblock %#}
-
-{#% block header_lead %}{% endblock %#}
 
 {% block navbar %}
     <ul class="nav">
@@ -16,8 +12,6 @@
         <li class=""><a href="/french/quote"><i class="icon-question-sign"></i> Demande de devis</a></li>
     </ul>
 {% endblock %}
-
-{#% block aside %}{% endblock %#}
 
 {% block content %}
     <h3>Mes expériences</h3>
@@ -143,5 +137,3 @@
         <li>Bachelor of Arts, option linguistique, interprétation et traduction en Anglais. Diplôme obtenu en 2006 à l'<a href="http://www-foreign.univer.kharkov.ua/eng/index.html">École de langues étrangères</a> de l'<a href="http://www.univer.kharkov.ua/en">Université Nationale Karazine de Kharkov</a> en Ukraine.</li>
     </ul>
 {% endblock %}
-
-{#% block footer %}{% endblock %#}

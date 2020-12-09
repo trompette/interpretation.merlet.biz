@@ -1,12 +1,8 @@
-{% extends '@english/layout.twig' %}
+{% extends 'english/layout.twig' %}
 
 {% block page_title %}
     Home - {{ parent() }}
 {% endblock %}
-
-{#% block header_title %}{% endblock %#}
-
-{#% block header_lead %}{% endblock %#}
 
 {% block navbar %}
     <ul class="nav">
@@ -16,8 +12,6 @@
         <li class=""><a href="/english/quote"><i class="icon-question-sign"></i> Free quote</a></li>
     </ul>
 {% endblock %}
-
-{#% block aside %}{% endblock %#}
 
 {% block content %}
     <h3>Welcome!</h3>
@@ -38,5 +32,3 @@
 
     <p>Please do not hesitate to <a href="/english/quote">contact me</a> if case of necessity.</p>
 {% endblock %}
-
-{#% block footer %}{% endblock %#}
