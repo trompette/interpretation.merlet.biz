@@ -6,7 +6,7 @@
         <title>{% block page_title %}{% endblock %}</title>
         <link rel="stylesheet" href="/css/bootstrap.css" />
         <link rel="stylesheet" href="/css/bootstrap-responsive.css" />
-        <link rel="stylesheet" href="/css/styles.css" />
+        {{ encore_entry_link_tags('app') }}
     </head>
     <body>
         <header class="container-fluid">
@@ -43,6 +43,6 @@
         </footer>
         <script src="//code.jquery.com/jquery-latest.js"></script>
         <script src="/js/bootstrap.js"></script>
-        <script src="/js/script.js"></script>
+        {{ encore_entry_script_tags('app') }}
     </body>
 </html>

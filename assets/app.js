@@ -10,3 +10,9 @@ import './styles/app.css';
 
 // start the Stimulus application
 import './bootstrap';
+
+$(document).ready(function() {
+    $('#language-select').change(function () {
+        document.location = $(this).val();
+    });
+});
