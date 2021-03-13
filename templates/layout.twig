@@ -4,8 +4,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{% block page_title %}{% endblock %}</title>
-        <link rel="stylesheet" href="/css/bootstrap.css" />
-        <link rel="stylesheet" href="/css/bootstrap-responsive.css" />
         {{ encore_entry_link_tags('app') }}
     </head>
     <body>
@@ -41,8 +39,6 @@
             {% block footer %}{% endblock %}
             {% include '_footer_links.twig' %}
         </footer>
-        <script src="//code.jquery.com/jquery-latest.js"></script>
-        <script src="/js/bootstrap.js"></script>
         {{ encore_entry_script_tags('app') }}
     </body>
 </html>
