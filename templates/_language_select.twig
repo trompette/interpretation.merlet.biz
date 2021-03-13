@@ -1,4 +1,4 @@
-<select id="language-select">
+<select data-controller="language" data-action="language#redirect" class="hidden">
     <option value="{{ path(route, {'language': 'french'}) }}" {% if language == 'french' %}selected="selected"{% endif %}>
     	Version française
     </option>
