@@ -1,17 +1,6 @@
 @import "./customized-bootstrap.css";
 
-/*
- * CSS based on a palette found on COLOURlovers
- * http://www.colourlovers.com/palette/1024017/ReadyDone
- *
- * dark orange:  FF8F24
- * light orange: FEAE37
- * dark blue:    2F8DCA
- * light blue:   51B4D4
- * ivory white:  EFEFEF
- * dark brown:   61473A
- * dark black:   303030
- */
+@import "variables";
 
 /* container size */
 header,
@@ -28,18 +17,18 @@ header {
 
 header a,
 header a:hover {
-    color: #FEAE37;
+    color: $light-orange;
 }
 
 header p {
     margin-left: 20px;
-    color: #51B4D4;
+    color: $light-blue;
 }
 
 header select {
-    border-color: #51B4D4;
+    border-color: $light-blue;
     border-width: 3px;
-    color: #2F8DCA;
+    color: $dark-blue;
     font-weight: bold;
     height: 33px;
     line-height: 33px;
@@ -48,15 +37,15 @@ header select {
 
 /* section styles */
 section {
-    background-color: #EFEFEF;
-    border: 2px solid #61473A;
+    background-color: $ivory-white;
+    border: 2px solid $dark-brown;
     border-radius: 10px;
     padding: 2px;
 }
 
 section .container-fluid {
-    background-color: #EFEFEF;
-    border: 1px solid #61473A;
+    background-color: $ivory-white;
+    border: 1px solid $dark-brown;
     border-radius: 6px;
     padding: 30px 50px;
     text-align: justify;
@@ -64,10 +53,10 @@ section .container-fluid {
 
 /* aside styles */
 aside {
-    background-color: #2F8DCA;
-    border: 1px solid #51B4D4;
+    background-color: $dark-blue;
+    border: 1px solid $light-blue;
     border-radius: 6px;
-    color: #EFEFEF;
+    color: $ivory-white;
     display: inline-block;
     float: right;
     padding: 10px;
@@ -76,10 +65,10 @@ aside {
 }
 
 aside h4 {
-    background-color: #EFEFEF;
-    border: 1px solid #51B4D4;
+    background-color: $ivory-white;
+    border: 1px solid $light-blue;
     border-radius: 3px;
-    color: #FF8F24;
+    color: $dark-orange;
     margin: 0;
     padding: 3px 20px;
 }
@@ -91,7 +80,7 @@ aside p {
 
 /* articles styles */
 article h3 {
-    color: #2F8DCA;
+    color: $dark-blue;
 }
 
 article th {
@@ -103,7 +92,7 @@ article label {
 }
 
 article select {
-    border-color: #61473A;
+    border-color: $dark-brown;
 }
 
 article .control-label {
@@ -121,7 +110,7 @@ article .form-action {
 
 article .btn-primary,
 article .btn-primary:hover {
-    color: #303030;
+    color: $dark-black;
 }
 
 article dt {
@@ -138,6 +127,6 @@ article dd {
 
 /* footer styles */
 footer {
-    color: #EFEFEF;
+    color: $ivory-white;
     text-align: center;
 }
