@@ -1,0 +1,20 @@
+header {
+    a, a:hover {
+        color: $light-orange;
+    }
+
+    p {
+        margin-left: 20px;
+        color: $light-blue;
+    }
+
+    select {
+        border-color: $light-blue;
+        border-width: 3px;
+        color: $dark-blue;
+        font-weight: bold;
+        height: 33px;
+        line-height: 33px;
+        width: 100%;
+    }
+}
