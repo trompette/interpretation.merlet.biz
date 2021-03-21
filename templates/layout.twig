@@ -20,10 +20,8 @@
         </header>
         <main>
             <div class="container-fluid">
-                <nav class="navbar row-fluid">
-                    <div class="navbar-inner">
-                        {% block navbar %}{% endblock %}
-                    </div>
+                <nav>
+                    {% block nav %}{% endblock %}
                 </nav>
                 <article class="row-fluid">
                     {% block aside %}{% endblock %}

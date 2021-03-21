@@ -1,0 +1,42 @@
+nav {
+    background-color: lighten($dark-brown, 30%);
+    border: 1px solid $dark-brown;
+    border-radius: 4px;
+    color: $dark-black;
+    margin-bottom: 20px;
+    min-height: 40px;
+    padding: 0 20px;
+
+    ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+
+        li {
+            a {
+                color: $dark-black;
+                display: block;
+                padding: 10px 15px 10px;
+                text-decoration: none;
+
+                i {
+                    width: 15px;
+                }
+            }
+
+            &.active a {
+                background-color: $dark-brown;
+                color: $ivory-white;
+            }
+
+            a:focus,
+            a:hover,
+            &.active a:hover,
+            &.active a:focus {
+                background-color: $dark-brown;
+                color: $ivory-white;
+                text-decoration: none;
+            }
+        }
+    }
+}

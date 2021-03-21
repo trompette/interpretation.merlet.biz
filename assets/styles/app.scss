@@ -1,9 +1,13 @@
+@import '~@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '~@fortawesome/fontawesome-free/css/solid.css';
+
 @import "./customized-bootstrap.css";
 
 @import "variables";
 @import "layout";
 @import "header";
 @import "main";
+@import "nav";
 @import "aside";
 @import "article";
 @import "footer";
