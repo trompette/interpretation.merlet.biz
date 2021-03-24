@@ -20,31 +20,30 @@
     <h3>Бесплатный расчёт стоимости заказа</h3>
 
     {% if app.request.get('step') == 'form' %}
-    <form class="form-horizontal" method="post">
-        <div class="control-group">
-            <label class="control-label">Имя</label>
-            <div class="controls"><input class="span6" name="form[lastName]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Фамилия</label>
-            <div class="controls"><input class="span6" name="form[firstName]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Название компании</label>
-            <div class="controls"><input class="span6" name="form[company]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Телефон</label>
-            <div class="controls"><input class="span6" name="form[phone]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">E-mail</label>
-            <div class="controls"><input class="span6" name="form[email]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Необходимая услуга</label>
-            <div class="controls">
-                <select class="span6" name="form[service]">
+        <form method="post">
+            <div>
+                <label for="form-lastName">Имя</label>
+                <input id="form-lastName" name="form[lastName]" type="text">
+            </div>
+            <div>
+                <label for="form-firstName">Фамилия</label>
+                <input id="form-firstName" name="form[firstName]" type="text">
+            </div>
+            <div>
+                <label for="form-company">Название компании</label>
+                <input id="form-company" name="form[company]" type="text">
+            </div>
+            <div>
+                <label for="form-phone">Телефон</label>
+                <input id="form-phone" name="form[phone]" type="text">
+            </div>
+            <div>
+                <label for="form-email">E-mail</label>
+                <input id="form-email" name="form[email]" type="text">
+            </div>
+            <div>
+                <label for="form-service">Необходимая услуга</label>
+                <select id="form-service" name="form[service]">
                     <option value="синхронный перевод">синхронный перевод</option>
                     <option value="шушотаж">шушотаж</option>
                     <option value="последовательный перевод">последовательный перевод</option>
@@ -54,30 +53,25 @@
                     <option value="другое">другое</option>
                 </select>
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Тематика перевода</label>
-            <div class="controls"><input class="span6" name="form[area]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Языки перевода</label>
-            <div class="controls">
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="французский" />французский</label>
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="английский" />английский</label>
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="русский" />русский</label>
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="украинский" />украинский</label>
+            <div>
+                <label for="form-area">Тематика перевода</label>
+                <input id="form-area" name="form[area]" type="text">
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Детали заказа</label>
-            <div class="controls">
-                <textarea class="span10" name="form[details]" rows="10"></textarea>
+            <div>
+                <label for="form-languages">Языки перевода</label>
+                <span>
+                    <label><input id="form-languages" name="form[languages][]" type="checkbox" value="французский">французский</label>
+                    <label><input name="form[languages][]" type="checkbox" value="английский">английский</label>
+                    <label><input name="form[languages][]" type="checkbox" value="русский">русский</label>
+                    <label><input name="form[languages][]" type="checkbox" value="украинский">украинский</label>
+                </span>
             </div>
-        </div>
-        <div class="form-action">
-            <input class="btn btn-large btn-primary" type="submit" value="Отправить запрос" />
-        </div>
-    </form>
+            <div>
+                <label for="form-details">Детали заказа</label>
+                <textarea id="form-details" name="form[details]" rows="10"></textarea>
+            </div>
+            <button type="submit">Отправить запрос</button>
+        </form>
     {% else %}
         <p>Спасибо, что нашли время и заполнили данную форму.</p>
 
@@ -86,7 +80,7 @@
 
     <h3>Мои контактные данные</h3>
 
-    <dl class="dl-horizontal">
+    <dl>
         <dt>Мобильный телефон</dt>
         <dd>+33.(0)6.59.82.82.17</dd>
 

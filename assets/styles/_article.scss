@@ -3,44 +3,91 @@ article {
         color: $dark-blue;
     }
 
-    th {
+    table {
+        margin: 0 0 10px 0;
+
+        th, td {
+            border-top: 1px solid $dark-brown;
+            padding: 8px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        td {
+            font-weight: normal;
+            text-align: left;
+        }
+
+        thead th {
+            border-top: 0;
+        }
+    }
+
+    form {
+        margin: 0 0 10px 0;
         text-align: center;
+
+        div {
+            display: flex;
+            text-align: left;
+
+            label {
+                font-style: italic;
+                margin: 0 0 8px 0;
+                padding: 4px 6px;
+                width: 200px;
+            }
+
+            input, select, textarea, span {
+                border-color: $dark-brown;
+                display: inline-block;
+                flex: auto;
+            }
+
+            span {
+                margin-bottom: 8px;
+                padding: 4px 6px;
+
+                label {
+                    display: inline;
+                    margin: 0 12px 0 0;
+                    padding: 0;
+                }
+
+                input {
+                    margin: 0 6px 3px 0 !important;
+                }
+            }
+        }
+
+        button {
+            background-color: $light-orange;
+            border: 1px solid $dark-brown;
+            border-radius: 5px;
+            color: $dark-black;
+            font-size: 16px;
+            line-height: normal;
+            padding: 9px 14px;
+        }
     }
 
-    label {
-        font-style: italic;
-    }
+    dl {
+        margin: 0 0 10px 0;
 
-    select {
-        border-color: $dark-brown;
-    }
+        dt {
+            clear: left;
+            float: left;
+            font-style: italic;
+            font-weight: normal;
+            margin: 0 0 8px 0;
+            padding: 4px 6px;
+            width: 200px;
+        }
 
-    .control-label {
-        margin-right: 20px;
-        width: 180px;
-    }
-
-    .control-group {
-        margin-bottom: 10px;
-    }
-
-    .form-action {
-        text-align: center;
-    }
-
-    .btn-primary, .btn-primary:hover {
-        color: $dark-black;
-    }
-
-    dt {
-        font-weight: normal;
-        font-style: italic;
-        width: 180px;
-    }
-
-    dd {
-        font-weight: bold;
-        margin-bottom: 10px;
-        margin-left: 200px;
+        dd {
+            font-weight: bold;
+            margin: 0 0 8px 0;
+            padding: 4px 6px;
+        }
     }
 }
