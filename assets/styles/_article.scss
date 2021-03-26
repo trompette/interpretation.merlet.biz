@@ -1,13 +1,27 @@
 article {
     h3 {
         color: $dark-blue;
+        font-size: 24px;
+        line-height: 40px;
+    }
+
+    p, ul, table, form, dl {
+        margin: 0 0 10px 0;
+    }
+
+    ul {
+        li {
+            list-style: disc outside;
+            margin-left: 20px;
+        }
     }
 
     table {
-        margin: 0 0 10px 0;
+        width: 100%;
 
         th, td {
             border-top: 1px solid $dark-brown;
+            font-weight: bold;
             padding: 8px;
             text-align: center;
             vertical-align: top;
@@ -24,7 +38,6 @@ article {
     }
 
     form {
-        margin: 0 0 10px 0;
         text-align: center;
 
         div {
@@ -39,23 +52,34 @@ article {
             }
 
             input, select, textarea, span {
-                border-color: $dark-brown;
+                background-color: white;
+                border: 1px solid $dark-brown;
+                border-radius: 3px;
                 display: inline-block;
                 flex: auto;
+                font-size: 14px;
+                padding: 4px 6px;
+                margin: 0 0 8px 0;
+            }
+
+            input:focus, select:focus, textarea:focus {
+                border-color: $dark-blue;
+                box-shadow: 0 0 6px $light-blue;
             }
 
             span {
-                margin-bottom: 8px;
-                padding: 4px 6px;
+                background-color: $ivory-white;
+                border: none;
 
                 label {
                     display: inline;
+                    font-style: normal;
                     margin: 0 12px 0 0;
                     padding: 0;
                 }
 
                 input {
-                    margin: 0 6px 3px 0 !important;
+                    margin: 0 6px 0 0;
                 }
             }
         }
@@ -63,22 +87,18 @@ article {
         button {
             background-color: $light-orange;
             border: 1px solid $dark-brown;
-            border-radius: 5px;
+            border-radius: 3px;
             color: $dark-black;
             font-size: 16px;
-            line-height: normal;
             padding: 9px 14px;
         }
     }
 
     dl {
-        margin: 0 0 10px 0;
-
         dt {
             clear: left;
             float: left;
             font-style: italic;
-            font-weight: normal;
             margin: 0 0 8px 0;
             padding: 4px 6px;
             width: 200px;

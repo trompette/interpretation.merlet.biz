@@ -4,12 +4,10 @@ main {
     border-radius: 10px;
     padding: 2px;
 
-    .container-fluid {
-        background-color: $ivory-white;
+    section {
         border: 1px solid $dark-brown;
         border-radius: 6px;
         padding: 30px 50px;
         text-align: justify;
     }
 }
-
