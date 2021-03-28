@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: $dark-black;
+    background-color: $dark-brown;
+}
+
+h1, h2, h3, h4 {
+    margin: 10px 0;
+    font-family: inherit;
+    font-weight: bold;
+    color: inherit;
+}
+
+a, a:visited {
+    color: $dark-orange;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: $dark-orange;
+    text-decoration: underline;
+}
+
+header, main, footer {
+    margin: 20px auto;
+    max-width: 950px;
+}

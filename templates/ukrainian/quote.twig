@@ -4,12 +4,12 @@
     Розрахунок вартості замовлення - {{ parent() }}
 {% endblock %}
 
-{% block navbar %}
-    <ul class="nav">
-        <li class=""><a href="/ukrainian/home"><i class="icon-home"></i> Про мене</a></li>
-        <li class=""><a href="/ukrainian/service"><i class="icon-briefcase"></i> Мої послуги</a></li>
-        <li class=""><a href="/ukrainian/experience"><i class="icon-pencil"></i> Досвід та освіта</a></li>
-        <li class="active"><a href="/ukrainian/quote"><i class="icon-question-sign"></i> Розрахунок вартості замовлення</a></li>
+{% block nav %}
+    <ul>
+        <li><a href="/ukrainian/home"><i class="fas fa-home"></i> Про мене</a></li>
+        <li><a href="/ukrainian/service"><i class="fas fa-briefcase"></i> Мої послуги</a></li>
+        <li><a href="/ukrainian/experience"><i class="fas fa-globe"></i> Досвід та освіта</a></li>
+        <li class="active"><a href="/ukrainian/quote"><i class="fas fa-comment-dollar"></i> Розрахунок вартості замовлення</a></li>
     </ul>
 {% endblock %}
 
@@ -20,31 +20,30 @@
     <h3>Отримати безкоштовний розрахунок вартості замовлення</h3>
 
     {% if app.request.get('step') == 'form' %}
-    <form class="form-horizontal" method="post">
-        <div class="control-group">
-            <label class="control-label">Ім'я</label>
-            <div class="controls"><input class="span6" name="form[lastName]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Прізвище</label>
-            <div class="controls"><input class="span6" name="form[firstName]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Назва компанії</label>
-            <div class="controls"><input class="span6" name="form[company]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Телефон</label>
-            <div class="controls"><input class="span6" name="form[phone]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Адреса е-mail</label>
-            <div class="controls"><input class="span6" name="form[email]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Необхідна послуга</label>
-            <div class="controls">
-                <select class="span6" name="form[service]">
+        <form method="post">
+            <div>
+                <label for="form-lastName">Ім'я</label>
+                <input id="form-lastName" name="form[lastName]" type="text">
+            </div>
+            <div>
+                <label for="form-firstName">Прізвище</label>
+                <input id="form-firstName" name="form[firstName]" type="text">
+            </div>
+            <div>
+                <label for="form-company">Назва компанії</label>
+                <input id="form-company" name="form[company]" type="text">
+            </div>
+            <div>
+                <label for="form-phone">Телефон</label>
+                <input id="form-phone" name="form[phone]" type="text">
+            </div>
+            <div>
+                <label for="form-email">Адреса е-mail</label>
+                <input id="form-email" name="form[email]" type="text">
+            </div>
+            <div>
+                <label for="form-service">Необхідна послуга</label>
+                <select id="form-service" name="form[service]">
                     <option value="синхронний переклад">синхронний переклад</option>
                     <option value="шушотаж">шушотаж</option>
                     <option value="послідовний переклад">послідовний переклад</option>
@@ -54,30 +53,25 @@
                     <option value="інше">інше</option>
                 </select>
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Тематика перекладу</label>
-            <div class="controls"><input class="span6" name="form[area]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Мови перекладу</label>
-            <div class="controls">
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="французька" />французька</label>
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="англійська" />англійська</label>
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="російська" />російська</label>
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="українська" />українська</label>
+            <div>
+                <label for="form-area">Тематика перекладу</label>
+                <input id="form-area" name="form[area]" type="text">
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Деталі замовлення</label>
-            <div class="controls">
-                <textarea class="span10" name="form[details]" rows="10"></textarea>
+            <div>
+                <label for="form-languages">Мови перекладу</label>
+                <span>
+                    <label><input id="form-languages" name="form[languages][]" type="checkbox" value="французька">французька</label>
+                    <label><input name="form[languages][]" type="checkbox" value="англійська">англійська</label>
+                    <label><input name="form[languages][]" type="checkbox" value="російська">російська</label>
+                    <label><input name="form[languages][]" type="checkbox" value="українська">українська</label>
+                </span>
             </div>
-        </div>
-        <div class="form-action">
-            <input class="btn btn-large btn-primary" type="submit" value="Відправити замовлення" />
-        </div>
-    </form>
+            <div>
+                <label for="form-details">Деталі замовлення</label>
+                <textarea id="form-details" name="form[details]" rows="10"></textarea>
+            </div>
+            <button type="submit">Відправити замовлення</button>
+        </form>
     {% else %}
         <p>Дякую, що знайшли час, щоб заповнити цю форму.</p>
 
@@ -86,7 +80,7 @@
 
     <h3>Мої контактні дані</h3>
 
-    <dl class="dl-horizontal">
+    <dl>
         <dt>Мобільний телефон</dt>
         <dd>+33.(0)6.59.82.82.17</dd>
 

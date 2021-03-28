@@ -4,45 +4,35 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{% block page_title %}{% endblock %}</title>
-        <link rel="stylesheet" href="/css/bootstrap.css" />
-        <link rel="stylesheet" href="/css/bootstrap-responsive.css" />
-        <link rel="stylesheet" href="/css/styles.css" />
+        {{ encore_entry_link_tags('app') }}
     </head>
     <body>
-        <header class="container-fluid">
-            <div class="row-fluid">
-                <div class="span9">
-                    <h1>
-                        <a href="{{ path('index') }}">{% block header_title %}{% endblock %}</a>
-                    </h1>
-                    <p class="lead">
-                        {% block header_lead %}{% endblock %}
-                    </p>
-                </div>
-                <div class="span3">
-                    {% include '_language_select.twig' %}
-                </div>
+        <header>
+            <div>
+                <h1>
+                    <a href="{{ path('index') }}">{% block header_title %}{% endblock %}</a>
+                </h1>
+                <p>
+                    {% block header_subtitle %}{% endblock %}
+                </p>
             </div>
+            {% include '_language_select.twig' %}
         </header>
-        <section>
-            <div class="container-fluid">
-                <nav class="navbar row-fluid">
-                    <div class="navbar-inner">
-                        {% block navbar %}{% endblock %}
-                    </div>
+        <main>
+            <section>
+                <nav>
+                    {% block nav %}{% endblock %}
                 </nav>
-                <article class="row-fluid">
+                <article>
                     {% block aside %}{% endblock %}
                     {% block content %}{% endblock %}
                 </article>
-            </div>
-        </section>
+            </section>
+        </main>
         <footer>
             {% block footer %}{% endblock %}
             {% include '_footer_links.twig' %}
         </footer>
-        <script src="//code.jquery.com/jquery-latest.js"></script>
-        <script src="/js/bootstrap.js"></script>
-        <script src="/js/script.js"></script>
+        {{ encore_entry_script_tags('app') }}
     </body>
 </html>

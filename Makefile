@@ -18,8 +18,13 @@ log: ## Follow development environment logs
 
 .PHONY: test
 test: ## Run test suite
+	@docker-compose exec web yarnpkg encore dev
 	@docker-compose exec web php composer.phar dump-autoload
 	@docker-compose exec web bin/phpunit
+
+.PHONY: assets
+assets: ## Build assets for production
+	@docker-compose exec web yarnpkg encore prod
 
 .PHONY: sh
 sh: ## Open shell in development environment

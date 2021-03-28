@@ -4,12 +4,12 @@
     Free quote - {{ parent() }}
 {% endblock %}
 
-{% block navbar %}
-    <ul class="nav">
-        <li class=""><a href="/english/home"><i class="icon-home"></i> Home</a></li>
-        <li class=""><a href="/english/service"><i class="icon-briefcase"></i> My services</a></li>
-        <li class=""><a href="/english/experience"><i class="icon-pencil"></i> Overall background</a></li>
-        <li class="active"><a href="/english/quote"><i class="icon-question-sign"></i> Free quote</a></li>
+{% block nav %}
+    <ul>
+        <li><a href="/english/home"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="/english/service"><i class="fas fa-briefcase"></i> My services</a></li>
+        <li><a href="/english/experience"><i class="fas fa-globe"></i> Overall background</a></li>
+        <li class="active"><a href="/english/quote"><i class="fas fa-comment-dollar"></i> Free quote</a></li>
     </ul>
 {% endblock %}
 
@@ -20,39 +20,38 @@
     <h3>Get a quote for free</h3>
 
     {% if app.request.get('step') == 'form' %}
-    <form class="form-horizontal" method="post">
-        <div class="control-group">
-            <label class="control-label">Civility</label>
-            <div class="controls">
-                <label class="radio inline"><input name="form[civility]" type="radio" value="Sir" />Sir</label>
-                <label class="radio inline"><input name="form[civility]" type="radio" value="Mrs" />Mrs</label>
-                <label class="radio inline"><input name="form[civility]" type="radio" value="Miss" />Miss</label>
+        <form method="post">
+            <div>
+                <label for="form-civility">Civility</label>
+                <span>
+                    <label><input id="form-civility" name="form[civility]" type="radio" value="Sir">Sir</label>
+                    <label><input name="form[civility]" type="radio" value="Mrs">Mrs</label>
+                    <label><input name="form[civility]" type="radio" value="Miss">Miss</label>
+                </span>
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">First name</label>
-            <div class="controls"><input class="span6" name="form[firstName]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Last name</label>
-            <div class="controls"><input class="span6" name="form[lastName]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Company name</label>
-            <div class="controls"><input class="span6" name="form[company]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Phone number</label>
-            <div class="controls"><input class="span6" name="form[phone]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">E-mail address</label>
-            <div class="controls"><input class="span6" name="form[email]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Service required</label>
-            <div class="controls">
-                <select class="span6" name="form[service]">
+            <div>
+                <label for="form-firstName">First name</label>
+                <input id="form-firstName" name="form[firstName]" type="text">
+            </div>
+            <div>
+                <label for="form-lastName">Last name</label>
+                <input id="form-lastName" name="form[lastName]" type="text">
+            </div>
+            <div>
+                <label for="form-company">Company name</label>
+                <input id="form-company" name="form[company]" type="text">
+            </div>
+            <div>
+                <label for="form-phone">Phone number</label>
+                <input id="form-phone" name="form[phone]" type="text">
+            </div>
+            <div>
+                <label for="form-email">E-mail address</label>
+                <input id="form-email" name="form[email]" type="text">
+            </div>
+            <div>
+                <label for="form-service">Service required</label>
+                <select id="form-service" name="form[service]">
                     <option value="Simultaneous interpretation">Simultaneous interpretation</option>
                     <option value="Whispered interpretation">Whispered interpretation</option>
                     <option value="Consecutive interpretation">Consecutive interpretation</option>
@@ -62,30 +61,25 @@
                     <option value="Other">Other</option>
                 </select>
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Area of expertise</label>
-            <div class="controls"><input class="span6" name="form[area]" type="text" /></div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Languages to use</label>
-            <div class="controls">
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="French" />French</label>
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="English" />English</label>
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="Russian" />Russian</label>
-                <label class="checkbox inline"><input name="form[languages][]" type="checkbox" value="Ukrainian" />Ukrainian</label>
+            <div>
+                <label for="form-area">Area of expertise</label>
+                <input id="form-area" name="form[area]" type="text">
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">Details of the service</label>
-            <div class="controls">
-                <textarea class="span10" name="form[details]" rows="10"></textarea>
+            <div>
+                <label for="form-languages">Languages to use</label>
+                <span>
+                    <label><input id="form-languages" name="form[languages][]" type="checkbox" value="French">French</label>
+                    <label><input name="form[languages][]" type="checkbox" value="English">English</label>
+                    <label><input name="form[languages][]" type="checkbox" value="Russian">Russian</label>
+                    <label><input name="form[languages][]" type="checkbox" value="Ukrainian">Ukrainian</label>
+                </span>
             </div>
-        </div>
-        <div class="form-action">
-            <input class="btn btn-large btn-primary" type="submit" value="Get a quote" />
-        </div>
-    </form>
+            <div>
+                <label for="form-details">Details of the service</label>
+                <textarea id="form-details" name="form[details]" rows="10"></textarea>
+            </div>
+            <button type="submit">Get a quote</button>
+        </form>
     {% else %}
         <p>Thank you for taking the time to complete the form.</p>
 
@@ -94,7 +88,7 @@
 
     <h3>My details</h3>
 
-    <dl class="dl-horizontal">
+    <dl>
         <dt>Cell phone</dt>
         <dd>+33.(0)6.59.82.82.17</dd>
 

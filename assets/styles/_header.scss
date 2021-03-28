@@ -1,0 +1,29 @@
+header {
+    display: flex;
+
+    div {
+        flex: auto;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    p {
+        color: $light-blue;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 30px;
+    }
+
+    select {
+        background-color: white;
+        border: 3px solid $light-blue;
+        border-radius: 3px;
+        color: $dark-blue;
+        font-size: 16px;
+        font-weight: bold;
+        width: 200px;
+    }
+}

@@ -1,0 +1,13 @@
+main {
+    background-color: $ivory-white;
+    border: 2px solid $dark-brown;
+    border-radius: 10px;
+    padding: 2px;
+
+    section {
+        border: 1px solid $dark-brown;
+        border-radius: 6px;
+        padding: 30px 50px;
+        text-align: justify;
+    }
+}
