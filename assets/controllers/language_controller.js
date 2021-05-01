@@ -2,7 +2,7 @@ import { Controller } from 'stimulus';
 
 export default class extends Controller {
     connect() {
-        this.element.classList.remove('hidden');
+        this.element.classList.remove('hidden-without-js');
     }
 
     redirect() {
