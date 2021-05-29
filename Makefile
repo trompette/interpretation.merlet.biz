@@ -20,7 +20,7 @@ log: ## Follow development environment logs
 test: ## Run test suite
 	@yarnpkg encore dev
 	@composer dump-autoload
-	@docker-compose exec web bin/phpunit
+	@docker-compose exec web php vendor/bin/phpunit
 
 .PHONY: assets
 assets: ## Build assets for production
