@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 cd "$(dirname $0)/.." || exit
-git pull --all --prune
-php bin/composer install --no-dev --no-scripts --optimize-autoloader
-php bin/console cache:clear
+git fetch --all --prune
+git reset origin/master --hard
+php bin/composer self-update --clean-backups
+php bin/composer install --no-dev --optimize-autoloader --verbose
 echo Deployed.
