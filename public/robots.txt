@@ -1,4 +1,2 @@
-Sitemap: http://interpretation.merlet.biz/sitemap.xml
-
 User-agent: *
 Disallow:
