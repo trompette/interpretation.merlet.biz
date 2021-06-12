@@ -1,7 +1,10 @@
-version: '3'
+version: '3.8'
 services:
   web:
     build: .
+    container_name: "interpretation-web"
+    hostname: "interpretation"
+    domainname: "merlet.biz"
     ports:
     - "8080:8080"
     volumes:
