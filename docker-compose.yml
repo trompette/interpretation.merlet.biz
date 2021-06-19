@@ -10,10 +10,12 @@ services:
   composer:
     image: composer:2
     container_name: "interpretation-composer"
+    user: "${UID}:${GID}"
     working_dir: "/srv"
     volumes: [".:/srv"]
   node:
     image: node
     container_name: "interpretation-node"
+    user: "${UID}:${GID}"
     working_dir: "/srv"
     volumes: [".:/srv"]
