@@ -1,12 +1,20 @@
 .DEFAULT_GOAL := help
+TAG := trompette/interpretation:buster
 
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) |sort |awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}'
 
+.PHONY: image
+image: ## Build and push base image
+	@docker build --pull --tag $(TAG) .
+	@docker login --username trompette
+	@docker push $(TAG)
+	@docker logout
+
 .PHONY: up
 up: ## Start development environment
-	@docker-compose up --build --detach
+	@docker-compose up --detach
 
 .PHONY: ps
 ps: ## Show development environment
