@@ -18,13 +18,14 @@ log: ## Follow development environment logs
 
 .PHONY: test
 test: ## Run test suite
-	@yarnpkg encore dev
-	@composer dump-autoload
-	@docker-compose exec web php vendor/bin/phpunit
+	@docker-compose run --rm composer install --ignore-platform-reqs
+	@docker-compose run --rm node yarn install --force
+	@docker-compose run --rm node yarn encore dev
+	@docker-compose exec web php vendor/bin/phpunit --testdox
 
 .PHONY: assets
 assets: ## Build assets for production
-	@yarnpkg encore prod
+	@docker-compose run --rm node yarn encore prod
 
 .PHONY: sh
 sh: ## Open shell in development environment

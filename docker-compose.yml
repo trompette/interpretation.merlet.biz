@@ -5,7 +5,15 @@ services:
     container_name: "interpretation-web"
     hostname: "interpretation"
     domainname: "merlet.biz"
-    ports:
-    - "8080:8080"
-    volumes:
-    - .:/srv
+    ports: ["8080:8080"]
+    volumes: [".:/srv"]
+  composer:
+    image: composer:2
+    container_name: "interpretation-composer"
+    working_dir: "/srv"
+    volumes: [".:/srv"]
+  node:
+    image: node
+    container_name: "interpretation-node"
+    working_dir: "/srv"
+    volumes: [".:/srv"]
