@@ -1,5 +1,9 @@
 .DEFAULT_GOAL := help
+
 TAG := trompette/interpretation:buster
+
+export UID=$(shell id -u)
+export GID=$(shell id -g)
 
 .PHONY: help
 help:
