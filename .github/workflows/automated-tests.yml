@@ -8,6 +8,10 @@ on:
     branches: 
       - "master"
 
+defaults:
+  run:
+    shell: "script --quiet --return --command \"bash -e {0}\""
+
 jobs:
   smoke-tests:
     name: "Smoke tests"
