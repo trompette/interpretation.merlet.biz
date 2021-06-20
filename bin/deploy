@@ -2,12 +2,14 @@
 
 cd "$(dirname $0)/.." || exit
 
+test -x "bin/composer" || { echo bin/composer not found; exit; }
+
 echo Updating Git repository...
 git fetch --all --prune
 git reset origin/master --hard
 
 echo Updating Composer and dependencies...
-php bin/composer self-update --clean-backups
-php bin/composer install --no-dev --optimize-autoloader
+bin/composer self-update --clean-backups
+bin/composer install --no-dev --optimize-autoloader
 
 echo Deployed.
