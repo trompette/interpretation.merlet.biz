@@ -18,7 +18,7 @@ image: ## Build and push base image
 
 .PHONY: up
 up: ## Start environment
-	@docker-compose up --detach
+	@docker-compose up --detach --quiet-pull
 
 .PHONY: ps
 ps: ## Show environment
@@ -31,7 +31,7 @@ log: ## Follow environment logs
 .PHONY: install
 install: ## Install dependencies
 	@docker-compose run --rm composer install --ignore-platform-reqs --no-interaction --no-progress
-	@docker-compose run --rm node yarn install --force
+	@docker-compose run --rm node yarn install --force --non-interactive --no-progress
 
 .PHONY: test
 test: ## Run test suite
@@ -48,4 +48,4 @@ sh: ## Open shell in environment
 
 .PHONY: down
 down: ## Stop environment
-	@docker-compose down
+	@docker-compose down --remove-orphans
