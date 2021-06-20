@@ -42,6 +42,12 @@ test: ## Run test suite
 assets: ## Build assets for production
 	@docker-compose run --rm node yarn encore prod
 
+.PHONY: outdated
+outdated: ## Show outdated dependencies
+	@docker-compose run --rm composer outdated --locked
+	@docker-compose run --rm composer recipes --outdated || :
+	@docker-compose run --rm node yarn outdated || :
+
 .PHONY: sh
 sh: ## Open shell in environment
 	@docker-compose exec web bash
