@@ -30,13 +30,13 @@ log: ## Follow environment logs
 
 .PHONY: install
 install: ## Install dependencies
-	@docker-compose run --rm -T composer install --ignore-platform-reqs --no-interaction --no-progress
-	@docker-compose run --rm -T node yarn install --force
+	@docker-compose run --rm composer install --ignore-platform-reqs --no-interaction --no-progress
+	@docker-compose run --rm node yarn install --force
 
 .PHONY: test
 test: ## Run test suite
-	@docker-compose run --rm -T node yarn encore dev
-	@docker-compose exec -T web php vendor/bin/phpunit --do-not-cache-result --testdox
+	@docker-compose run --rm node yarn encore dev
+	@docker-compose exec web php vendor/bin/phpunit --do-not-cache-result --testdox
 
 .PHONY: assets
 assets: ## Build assets for production
