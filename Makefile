@@ -18,7 +18,7 @@ image: ## Build and push base image
 
 .PHONY: up
 up: ## Start environment
-	@docker-compose up --detach
+	@docker-compose up --detach --quiet-pull
 
 .PHONY: ps
 ps: ## Show environment
@@ -30,13 +30,13 @@ log: ## Follow environment logs
 
 .PHONY: install
 install: ## Install dependencies
-	@docker-compose run --rm -T composer install --ignore-platform-reqs --no-interaction --no-progress
-	@docker-compose run --rm -T node yarn install --force
+	@docker-compose run --rm composer install --ignore-platform-reqs --no-interaction --no-progress
+	@docker-compose run --rm node yarn install --force --non-interactive --no-progress
 
 .PHONY: test
 test: ## Run test suite
-	@docker-compose run --rm -T node yarn encore dev
-	@docker-compose exec -T web php vendor/bin/phpunit --do-not-cache-result --testdox
+	@docker-compose run --rm node yarn encore dev
+	@docker-compose exec web php vendor/bin/phpunit --do-not-cache-result --testdox
 
 .PHONY: assets
 assets: ## Build assets for production
@@ -48,4 +48,4 @@ sh: ## Open shell in environment
 
 .PHONY: down
 down: ## Stop environment
-	@docker-compose down
+	@docker-compose down --remove-orphans
