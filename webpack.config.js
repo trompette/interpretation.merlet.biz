@@ -19,6 +19,9 @@ Encore
     .enableVersioning(production)
     .enableSassLoader()
 
+    .configureBabel((config) => {
+        config.plugins.push('@babel/plugin-proposal-class-properties');
+    })
     .configureBabelPresetEnv((config) => {
         config.useBuiltIns = 'usage';
         config.corejs = 3;
