@@ -31,7 +31,7 @@ class Quote implements LoggerAwareInterface
         $this->logger->info("Executing Quote($language, $step)");
 
         if ('form' === $step && 'POST' === $request->getMethod()) {
-            $this->quoteMailer->configure($request->request->all('form'))->send();
+            $this->quoteMailer->send($request->request->all('form'));
 
             return new RedirectResponse($this->urlGenerator->generate('quote', ['language' => $language, 'step' => 'requested']));
         }

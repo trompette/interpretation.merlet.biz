@@ -2,12 +2,15 @@
 
 namespace Sveta\Mailer;
 
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
 use Swift_Mailer;
-use Swift_SwiftException;
 use Twig\Environment;
 
-class Quote
+class Quote implements LoggerAwareInterface
 {
+    use LoggerAwareTrait;
+
     private $mailer;
     private $twig;
     private $params;
@@ -30,27 +33,19 @@ class Quote
         ];
     }
 
-    public function configure(array $params): self
+    public function send(array $params): void
     {
-        $this->params = array_merge($this->params, $params);
+        $params = array_merge($this->params, $params);
 
-        return $this;
-    }
+        $this->logger->info('Sending message Quote()', $params);
 
-    public function send(): void
-    {
-        $body = $this->twig->render('email.twig', $this->params);
-
+        $body = $this->twig->render('email.twig', $params);
         $message = $this->mailer->createMessage()
             ->setSubject('Demande de devis sur le site')
             ->setFrom('interpretation@merlet.biz')
             ->setTo('interpretation@merlet.biz')
             ->setBody($body, 'text/html');
 
-        try {
-            $this->mailer->send($message);
-        } catch (Swift_SwiftException $e) {
-            // TODO: log exception message
-        }
+        $this->mailer->send($message);
     }
 }
