@@ -2,21 +2,23 @@
 
 namespace Sveta\Controller;
 
-use Psr\Log\LoggerInterface;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
-class Index
+class Index implements LoggerAwareInterface
 {
-    public function __construct(LoggerInterface $monolog, UrlGeneratorInterface $urlGenerator)
+    use LoggerAwareTrait;
+
+    public function __construct(UrlGeneratorInterface $urlGenerator)
     {
-        $this->monolog = $monolog;
         $this->urlGenerator = $urlGenerator;
     }
 
     public function execute($language)
     {
-        $this->monolog->info('Executing Index()');
+        $this->logger->info("Executing Index($language)");
 
         return new RedirectResponse($this->urlGenerator->generate('home', ['language' => $language]));
     }

@@ -2,7 +2,8 @@
 
 namespace Sveta\Controller;
 
-use Psr\Log\LoggerInterface;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
 use Sveta\Mailer\Quote as QuoteMailer;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,11 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Twig\Environment;
 
-class Quote
+class Quote implements LoggerAwareInterface
 {
-    public function __construct(LoggerInterface $monolog, UrlGeneratorInterface $urlGenerator, Environment $twig, QuoteMailer $quoteMailer)
+    use LoggerAwareTrait;
+
+    public function __construct(UrlGeneratorInterface $urlGenerator, Environment $twig, QuoteMailer $quoteMailer)
     {
-        $this->monolog = $monolog;
         $this->urlGenerator = $urlGenerator;
         $this->twig = $twig;
         $this->quoteMailer = $quoteMailer;
@@ -22,7 +24,7 @@ class Quote
 
     public function execute($language, $step, Request $request)
     {
-        $this->monolog->info('Executing Quote()');
+        $this->logger->info("Executing Quote($language, $step)");
 
         if ('form' === $step && 'POST' === $request->getMethod()) {
             $this->quoteMailer->configure($request->request->all('form'))->send();

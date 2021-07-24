@@ -2,21 +2,23 @@
 
 namespace Sveta\Controller;
 
-use Psr\Log\LoggerInterface;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
-class Home
+class Home implements LoggerAwareInterface
 {
-    public function __construct(LoggerInterface $monolog, Environment $twig)
+    use LoggerAwareTrait;
+
+    public function __construct(Environment $twig)
     {
-        $this->monolog = $monolog;
         $this->twig = $twig;
     }
 
     public function execute($language)
     {
-        $this->monolog->info('Executing Home()');
+        $this->logger->info("Executing Home($language)");
 
         return new Response($this->twig->render('template.twig'));
     }
