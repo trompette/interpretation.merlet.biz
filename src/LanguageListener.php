@@ -2,18 +2,18 @@
 
 namespace Sveta;
 
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class LanguageListener implements EventSubscriberInterface
 {
     public static function getSubscribedEvents()
     {
-        return array(
+        return [
             KernelEvents::REQUEST => 'onKernelRequest',
-        );
+        ];
     }
 
     public function onKernelRequest(RequestEvent $event)
@@ -32,12 +32,12 @@ class LanguageListener implements EventSubscriberInterface
 
     private function guessPreferredLanguage(Request $request)
     {
-        $languages = array(
+        $languages = [
             'fr' => 'french',
             'en' => 'english',
             'ru' => 'russian',
             'uk' => 'ukrainian',
-        );
+        ];
 
         $language = $request->getPreferredLanguage(array_keys($languages));
 

@@ -2,51 +2,50 @@
 
 namespace Sveta\Mailer;
 
-use Swift_SwiftException;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
+use Swift_Mailer;
 use Twig\Environment;
 
-class Quote
+class Quote implements LoggerAwareInterface
 {
-    public function __construct(\Swift_Mailer $mailer, Environment $twig)
+    use LoggerAwareTrait;
+
+    private $mailer;
+    private $twig;
+    private $params;
+
+    public function __construct(Swift_Mailer $mailer, Environment $twig)
     {
         $this->mailer = $mailer;
         $this->twig = $twig;
-
         $this->params = [
-            'civility'  => '',
+            'civility' => '',
             'firstName' => '',
-            'lastName'  => '',
-            'company'   => '',
-            'phone'     => '',
-            'email'     => '',
-            'service'   => '',
-            'area'      => '',
+            'lastName' => '',
+            'company' => '',
+            'phone' => '',
+            'email' => '',
+            'service' => '',
+            'area' => '',
             'languages' => [],
-            'details'   => '',
+            'details' => '',
         ];
     }
 
-    public function configure($params)
+    public function send(array $params): void
     {
-        $this->params = array_merge($this->params, $params);
+        $params = array_merge($this->params, $params);
 
-        return $this;
-    }
+        $this->logger->info('Sending message Quote()', $params);
 
-    public function send()
-    {
-        $body = $this->twig->render('email.twig', $this->params);
-
+        $body = $this->twig->render('email.twig', $params);
         $message = $this->mailer->createMessage()
             ->setSubject('Demande de devis sur le site')
             ->setFrom('interpretation@merlet.biz')
             ->setTo('interpretation@merlet.biz')
             ->setBody($body, 'text/html');
 
-        try {
-            $this->mailer->send($message);
-        } catch (Swift_SwiftException $e) {
-            // TODO: log exception message
-        }
+        $this->mailer->send($message);
     }
 }
