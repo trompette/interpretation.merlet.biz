@@ -56,7 +56,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "9.3",
-            "ref": "f58af82edfa7463d9266a0d05c239bd149051d11"
+            "ref": "a6249a6c4392e9169b87abf93225f7f9f59025e6"
         },
         "files": [
             ".env.test",
