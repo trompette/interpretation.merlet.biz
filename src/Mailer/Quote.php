@@ -13,16 +13,16 @@ class Quote
         $this->twig = $twig;
 
         $this->params = [
-            'civility'  => '',
+            'civility' => '',
             'firstName' => '',
-            'lastName'  => '',
-            'company'   => '',
-            'phone'     => '',
-            'email'     => '',
-            'service'   => '',
-            'area'      => '',
+            'lastName' => '',
+            'company' => '',
+            'phone' => '',
+            'email' => '',
+            'service' => '',
+            'area' => '',
             'languages' => [],
-            'details'   => '',
+            'details' => '',
         ];
     }
 
