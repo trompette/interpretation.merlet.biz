@@ -11,12 +11,14 @@ class Experience implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
 
+    private $twig;
+
     public function __construct(Environment $twig)
     {
         $this->twig = $twig;
     }
 
-    public function execute($language)
+    public function execute(string $language): Response
     {
         $this->logger->info("Executing Experience($language)");
 

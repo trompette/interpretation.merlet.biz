@@ -2,16 +2,20 @@
 
 namespace Sveta\Mailer;
 
+use Swift_Mailer;
 use Swift_SwiftException;
 use Twig\Environment;
 
 class Quote
 {
-    public function __construct(\Swift_Mailer $mailer, Environment $twig)
+    private $mailer;
+    private $twig;
+    private $params;
+
+    public function __construct(Swift_Mailer $mailer, Environment $twig)
     {
         $this->mailer = $mailer;
         $this->twig = $twig;
-
         $this->params = [
             'civility' => '',
             'firstName' => '',
@@ -26,14 +30,14 @@ class Quote
         ];
     }
 
-    public function configure($params)
+    public function configure(array $params): self
     {
         $this->params = array_merge($this->params, $params);
 
         return $this;
     }
 
-    public function send()
+    public function send(): void
     {
         $body = $this->twig->render('email.twig', $this->params);
 

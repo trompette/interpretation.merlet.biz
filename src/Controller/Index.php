@@ -11,12 +11,14 @@ class Index implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
 
+    private $urlGenerator;
+
     public function __construct(UrlGeneratorInterface $urlGenerator)
     {
         $this->urlGenerator = $urlGenerator;
     }
 
-    public function execute($language)
+    public function execute(string $language): RedirectResponse
     {
         $this->logger->info("Executing Index($language)");
 

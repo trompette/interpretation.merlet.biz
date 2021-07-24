@@ -15,6 +15,10 @@ class Quote implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
 
+    private $urlGenerator;
+    private $twig;
+    private $quoteMailer;
+
     public function __construct(UrlGeneratorInterface $urlGenerator, Environment $twig, QuoteMailer $quoteMailer)
     {
         $this->urlGenerator = $urlGenerator;
