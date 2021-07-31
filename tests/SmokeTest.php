@@ -4,43 +4,56 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class SmokeTest extends WebTestCase
 {
-    /** @test */
-    public function index_redirects()
+    /** @test @dataProvider languages */
+    public function index_redirects_to_home($givenLanguage, $expectedLocation)
     {
         $client = static::createClient();
+        $client->setServerParameter('HTTP_ACCEPT_LANGUAGE', $givenLanguage);
         $client->request('GET', '/');
 
-        self::assertTrue($client->getResponse()->isRedirect());
+        self::assertResponseRedirects($expectedLocation, 302);
+    }
+
+    public function languages()
+    {
+        return [
+            'french as preferred language' => ['fr', '/french/home'],
+            'english as preferred language' => ['en', '/english/home'],
+            'russian as preferred language' => ['ru', '/russian/home'],
+            'ukrainian as preferred language' => ['uk', '/ukrainian/home'],
+            'unknown preferred language' => ['zz', '/french/home'],
+        ];
     }
 
     /** @test @dataProvider pages */
-    public function page_contains_string($path, $text)
+    public function page_title_contains_text($givenPath, $expectedText)
     {
         $client = static::createClient();
-        $client->request('GET', $path);
+        $crawler = $client->request('GET', $givenPath);
 
-        self::assertStringContainsString($text, $client->getResponse()->getContent());
+        self::assertResponseStatusCodeSame(200);
+        self::assertStringContainsString($expectedText, $crawler->filter('title')->first()->text());
     }
 
     public function pages()
     {
         return [
-            ['/french/home', 'Interprète et traductrice en français, anglais, russe et ukrainien'],
-            ['/french/service', 'Interprète et traductrice en français, anglais, russe et ukrainien'],
-            ['/french/experience', 'Interprète et traductrice en français, anglais, russe et ukrainien'],
-            ['/french/quote', 'Interprète et traductrice en français, anglais, russe et ukrainien'],
-            ['/english/home', 'Interpreter and translator of French, English, Russian and Ukrainian'],
-            ['/english/service', 'Interpreter and translator of French, English, Russian and Ukrainian'],
-            ['/english/experience', 'Interpreter and translator of French, English, Russian and Ukrainian'],
-            ['/english/quote', 'Interpreter and translator of French, English, Russian and Ukrainian'],
-            ['/russian/home', 'Устный и письменный переводчик француского, английского, русского и украинского языков'],
-            ['/russian/service', 'Устный и письменный переводчик француского, английского, русского и украинского языков'],
-            ['/russian/experience', 'Устный и письменный переводчик француского, английского, русского и украинского языков'],
-            ['/russian/quote', 'Устный и письменный переводчик француского, английского, русского и украинского языков'],
-            ['/ukrainian/home', 'Усний та письмовий перекладач французької, англійської, російської та української мов'],
-            ['/ukrainian/service', 'Усний та письмовий перекладач французької, англійської, російської та української мов'],
-            ['/ukrainian/experience', 'Усний та письмовий перекладач французької, англійської, російської та української мов'],
-            ['/ukrainian/quote', 'Усний та письмовий перекладач французької, англійської, російської та української мов'],
+            'path for home in french' => ['/french/home', 'Accueil'],
+            'path for service in french' => ['/french/service', 'Mes services'],
+            'path for experience in french' => ['/french/experience', 'Mon parcours'],
+            'path for quote in french' => ['/french/quote', 'Demande de devis'],
+            'path for home in english' => ['/english/home', 'Home'],
+            'path for service in english' => ['/english/service', 'My services'],
+            'path for experience in english' => ['/english/experience', 'Overall background'],
+            'path for quote in english' => ['/english/quote', 'Free quote'],
+            'path for home in russian' => ['/russian/home', 'Главная'],
+            'path for service in russian' => ['/russian/service', 'Мои услуги'],
+            'path for experience in russian' => ['/russian/experience', 'Опыт и образование'],
+            'path for quote in russian' => ['/russian/quote', 'Бесплатный расчёт стоимости'],
+            'path for home in ukrainian' => ['/ukrainian/home', 'Про мене'],
+            'path for service in ukrainian' => ['/ukrainian/service', 'Мої послуги'],
+            'path for experience in ukrainian' => ['/ukrainian/experience', 'Досвід та освіта'],
+            'path for quote in ukrainian' => ['/ukrainian/quote', 'Розрахунок вартості замовлення'],
         ];
     }
 }
