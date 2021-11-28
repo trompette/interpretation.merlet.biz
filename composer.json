@@ -5,12 +5,12 @@
         "php": "^7.3",
         "symfony/console": "^5.3",
         "symfony/dotenv": "^5.3",
-        "symfony/flex": "^1.13",
+        "symfony/flex": "^1.17",
         "symfony/framework-bundle": "^5.3",
         "symfony/runtime": "^5.3",
         "symfony/swiftmailer-bundle": "^3.5",
         "symfony/twig-bundle": "^5.3",
-        "symfony/webpack-encore-bundle": "^1.11",
+        "symfony/webpack-encore-bundle": "^1.13",
         "symfony/yaml": "^5.3"
     },
     "require-dev": {
@@ -19,6 +19,9 @@
         "symfony/css-selector": "^5.3"
     },
     "config": {
+        "platform": {
+            "php": "7.3"
+        },
         "preferred-install": {
             "*": "dist"
         },
