@@ -26,7 +26,7 @@ ps: ## Show environment
 
 .PHONY: log
 log: ## Follow environment logs
-	@docker-compose logs --follow
+	@docker-compose logs --follow web
 
 .PHONY: install
 install: ## Install dependencies
