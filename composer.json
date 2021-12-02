@@ -7,8 +7,8 @@
         "symfony/dotenv": "^5.4",
         "symfony/flex": "^1.17",
         "symfony/framework-bundle": "^5.4",
+        "symfony/mailer": "^5.4",
         "symfony/runtime": "^5.4",
-        "symfony/swiftmailer-bundle": "^3.5",
         "symfony/twig-bundle": "^5.4",
         "symfony/webpack-encore-bundle": "^1.13",
         "symfony/yaml": "^5.4"
@@ -50,7 +50,8 @@
         "symfony": {
             "id": "01C0EM3TK8H6VN1CDDPA63Z0VM",
             "allow-contrib": false,
-            "require": "^5.4"
+            "require": "^5.4",
+            "docker": false
         }
     }
 }
