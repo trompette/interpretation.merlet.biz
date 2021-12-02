@@ -4,7 +4,8 @@ namespace Sveta\Mailer;
 
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
-use Swift_Mailer;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Twig\Environment;
 
 class Quote implements LoggerAwareInterface
@@ -15,7 +16,7 @@ class Quote implements LoggerAwareInterface
     private $twig;
     private $params;
 
-    public function __construct(Swift_Mailer $mailer, Environment $twig)
+    public function __construct(MailerInterface $mailer, Environment $twig)
     {
         $this->mailer = $mailer;
         $this->twig = $twig;
@@ -39,12 +40,11 @@ class Quote implements LoggerAwareInterface
 
         $this->logger->info('Sending message Quote()', $params);
 
-        $body = $this->twig->render('email.twig', $params);
-        $message = $this->mailer->createMessage()
-            ->setSubject('Demande de devis sur le site')
-            ->setFrom('interpretation@merlet.biz')
-            ->setTo('interpretation@merlet.biz')
-            ->setBody($body, 'text/html');
+        $message = (new Email())
+            ->from('interpretation@merlet.biz')
+            ->to('interpretation@merlet.biz')
+            ->subject('Demande de devis sur le site')
+            ->html($this->twig->render('email.twig', $params));
 
         $this->mailer->send($message);
     }
