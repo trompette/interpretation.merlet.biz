@@ -12,7 +12,7 @@ class Home implements LoggerAwareInterface
     use LoggerAwareTrait;
     use TwigAwareTrait;
 
-    public function execute(string $language): Response
+    public function __invoke(string $language): Response
     {
         $this->logger->info("Executing Home($language)");
 
