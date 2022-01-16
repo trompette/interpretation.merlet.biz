@@ -17,7 +17,7 @@ class Quote implements LoggerAwareInterface
     use TwigAwareTrait;
     use UrlGeneratorAwareTrait;
 
-    public function execute(QuoteMailer $quoteMailer, $language, $step, Request $request)
+    public function __invoke(QuoteMailer $quoteMailer, string $language, string $step, Request $request): Response
     {
         $this->logger->info("Executing Quote($language, $step)");
 

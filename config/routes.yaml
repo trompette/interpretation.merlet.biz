@@ -1,33 +1,33 @@
 index:
     path: /
     defaults:
-        _controller: 'Sveta\Controller\Index::execute'
+        _controller: 'Sveta\Controller\Index'
 
 home:
     path: /{language}/home
     defaults:
-        _controller: 'Sveta\Controller\Home::execute'
+        _controller: 'Sveta\Controller\Home'
     requirements:
         language: french|english|russian|ukrainian
 
 service:
     path: /{language}/service
     defaults:
-        _controller: 'Sveta\Controller\Service::execute'
+        _controller: 'Sveta\Controller\Service'
     requirements:
         language: french|english|russian|ukrainian
 
 experience:
     path: /{language}/experience
     defaults:
-        _controller: 'Sveta\Controller\Experience::execute'
+        _controller: 'Sveta\Controller\Experience'
     requirements:
         language: french|english|russian|ukrainian
 
 quote:
     path: /{language}/quote-{step}
     defaults:
-        _controller: 'Sveta\Controller\Quote::execute'
+        _controller: 'Sveta\Controller\Quote'
         step: form
     requirements:
         language: french|english|russian|ukrainian
