@@ -4,23 +4,19 @@ namespace Sveta\Mailer;
 
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
-use Symfony\Component\Mailer\MailerInterface;
+use Sveta\DependencyInjection\MailerAwareTrait;
+use Sveta\DependencyInjection\TwigAwareTrait;
 use Symfony\Component\Mime\Email;
-use Twig\Environment;
 
 class Quote implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
+    use MailerAwareTrait;
+    use TwigAwareTrait;
 
-    private $mailer;
-    private $twig;
-    private $params;
-
-    public function __construct(MailerInterface $mailer, Environment $twig)
+    public function send(array $params): void
     {
-        $this->mailer = $mailer;
-        $this->twig = $twig;
-        $this->params = [
+        $defaults = [
             'civility' => '',
             'firstName' => '',
             'lastName' => '',
@@ -32,11 +28,7 @@ class Quote implements LoggerAwareInterface
             'languages' => [],
             'details' => '',
         ];
-    }
-
-    public function send(array $params): void
-    {
-        $params = array_merge($this->params, $params);
+        $params = array_merge($defaults, $params);
 
         $this->logger->info('Sending message Quote()', $params);
 
