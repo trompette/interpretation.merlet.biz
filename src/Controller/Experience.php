@@ -4,19 +4,13 @@ namespace Sveta\Controller;
 
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
+use Sveta\DependencyInjection\TwigAwareTrait;
 use Symfony\Component\HttpFoundation\Response;
-use Twig\Environment;
 
 class Experience implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
-
-    private $twig;
-
-    public function __construct(Environment $twig)
-    {
-        $this->twig = $twig;
-    }
+    use TwigAwareTrait;
 
     public function execute(string $language): Response
     {

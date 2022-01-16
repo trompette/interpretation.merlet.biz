@@ -4,19 +4,13 @@ namespace Sveta\Controller;
 
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
+use Sveta\DependencyInjection\UrlGeneratorAwareTrait;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class Index implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
-
-    private $urlGenerator;
-
-    public function __construct(UrlGeneratorInterface $urlGenerator)
-    {
-        $this->urlGenerator = $urlGenerator;
-    }
+    use UrlGeneratorAwareTrait;
 
     public function execute(string $language): RedirectResponse
     {
