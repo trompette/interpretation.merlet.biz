@@ -9,7 +9,7 @@ trait TwigAwareTrait
     protected $twig;
 
     /** @required */
-    public function injectTwig(Environment $twig)
+    public function injectTwig(Environment $twig): void
     {
         $this->twig = $twig;
     }

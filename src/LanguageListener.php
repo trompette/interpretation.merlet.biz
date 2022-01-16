@@ -16,7 +16,7 @@ class LanguageListener implements EventSubscriberInterface
         ];
     }
 
-    public function onKernelRequest(RequestEvent $event)
+    public function onKernelRequest(RequestEvent $event): void
     {
         $request = $event->getRequest();
 
@@ -30,7 +30,7 @@ class LanguageListener implements EventSubscriberInterface
         );
     }
 
-    private function guessPreferredLanguage(Request $request)
+    private function guessPreferredLanguage(Request $request): string
     {
         $languages = [
             'fr' => 'french',
