@@ -5,7 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class SmokeTest extends WebTestCase
 {
     /** @test @dataProvider languages */
-    public function index_redirects_to_home($givenLanguage, $expectedLocation)
+    public function index_redirects_to_home(string $givenLanguage, string $expectedLocation): void
     {
         $client = static::createClient();
         $client->setServerParameter('HTTP_ACCEPT_LANGUAGE', $givenLanguage);
@@ -14,7 +14,7 @@ class SmokeTest extends WebTestCase
         self::assertResponseRedirects($expectedLocation, 302);
     }
 
-    public function languages()
+    public function languages(): array
     {
         return [
             'french as preferred language' => ['fr', '/french/home'],
@@ -26,7 +26,7 @@ class SmokeTest extends WebTestCase
     }
 
     /** @test @dataProvider pages */
-    public function page_title_contains_text($givenPath, $expectedText)
+    public function page_title_contains_text(string $givenPath, string $expectedText): void
     {
         $client = static::createClient();
         $crawler = $client->request('GET', $givenPath);
@@ -35,7 +35,7 @@ class SmokeTest extends WebTestCase
         self::assertStringContainsString($expectedText, $crawler->filter('title')->first()->text());
     }
 
-    public function pages()
+    public function pages(): array
     {
         return [
             'path for home in french' => ['/french/home', 'Accueil'],

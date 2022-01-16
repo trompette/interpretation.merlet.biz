@@ -9,7 +9,7 @@ trait UrlGeneratorAwareTrait
     protected $urlGenerator;
 
     /** @required */
-    public function injectUrlGenerator(UrlGeneratorInterface $urlGenerator)
+    public function injectUrlGenerator(UrlGeneratorInterface $urlGenerator): void
     {
         $this->urlGenerator = $urlGenerator;
     }
