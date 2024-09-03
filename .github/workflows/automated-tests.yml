@@ -16,6 +16,8 @@ jobs:
   smoke-tests:
     name: "Smoke tests"
     runs-on: "ubuntu-latest"
+    env:
+      COMPOSE_ANSI: never
 
     steps:
     - name: "Checkout"
