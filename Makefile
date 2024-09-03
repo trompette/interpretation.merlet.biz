@@ -18,7 +18,7 @@ image: ## Build and push base image
 
 .PHONY: up
 up: ## Start environment
-	@docker compose up --detach --quiet-pull
+	@docker compose up --detach --force-recreate --pull always
 
 .PHONY: ps
 ps: ## Show environment
