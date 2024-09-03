@@ -18,40 +18,40 @@ image: ## Build and push base image
 
 .PHONY: up
 up: ## Start environment
-	@docker-compose up --detach --quiet-pull
+	@docker compose up --detach --force-recreate --pull always
 
 .PHONY: ps
 ps: ## Show environment
-	@docker-compose ps --all
+	@docker compose ps --all
 
 .PHONY: log
 log: ## Follow environment logs
-	@docker-compose logs --follow web
+	@docker compose logs --follow web
 
 .PHONY: install
 install: ## Install dependencies
-	@docker-compose run --rm composer install --ignore-platform-reqs --no-interaction --no-progress
-	@docker-compose run --rm node yarn install --force --non-interactive --no-progress
+	@docker compose run --rm composer install --ignore-platform-reqs --no-interaction --no-progress
+	@docker compose run --rm node yarn install --force --non-interactive --no-progress
 
 .PHONY: test
 test: ## Run test suite
-	@docker-compose run --rm node yarn encore dev
-	@docker-compose exec web php vendor/bin/phpunit --do-not-cache-result --testdox
+	@docker compose run --rm node yarn encore dev
+	@docker compose exec web php vendor/bin/phpunit --do-not-cache-result --testdox
 
 .PHONY: assets
 assets: ## Build assets for production
-	@docker-compose run --rm node yarn encore prod
+	@docker compose run --rm node yarn encore prod
 
 .PHONY: outdated
 outdated: ## Show outdated dependencies
-	@docker-compose run --rm composer outdated --locked
-	@docker-compose run --rm composer recipes --outdated || :
-	@docker-compose run --rm node yarn outdated || :
+	@docker compose run --rm composer outdated --locked
+	@docker compose run --rm composer recipes --outdated || :
+	@docker compose run --rm node yarn outdated || :
 
 .PHONY: sh
 sh: ## Open shell in environment
-	@docker-compose exec web bash
+	@docker compose exec web bash
 
 .PHONY: down
 down: ## Stop environment
-	@docker-compose down --remove-orphans
+	@docker compose down --remove-orphans
