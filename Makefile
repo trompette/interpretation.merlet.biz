@@ -33,6 +33,11 @@ install: ## Install dependencies
 	@docker compose run --rm composer install --ignore-platform-reqs --no-interaction --no-progress
 	@docker compose run --rm node yarn install --force --non-interactive --no-progress
 
+.PHONY: update
+update: ## Update dependencies
+	@docker compose run --rm composer update --no-interaction --no-progress
+	@docker compose run --rm node yarn upgrade --non-interactive --no-progress
+
 .PHONY: test
 test: ## Run test suite
 	@docker compose run --rm node yarn encore dev
