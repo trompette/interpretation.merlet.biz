@@ -13,7 +13,7 @@ services:
     working_dir: "/srv"
     volumes: [".:/srv"]
   node:
-    image: node
+    image: node:25
     container_name: "interpretation-node"
     user: "${UID}:${GID}"
     working_dir: "/srv"
